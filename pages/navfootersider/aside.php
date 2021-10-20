@@ -178,7 +178,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="../about/about.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>About Company</p>
                             </a>
                         </li>
@@ -186,7 +186,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="../about/about-director.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>About Director</p>
                             </a>
                         </li>
@@ -194,7 +194,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="../about/about-mission-vission.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>Mission-Vission</p>
                             </a>
                         </li>

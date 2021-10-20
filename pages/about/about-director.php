@@ -2,7 +2,7 @@
 include '../../connection.inc.php';
 
 if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
-  $select = "SELECT * FROM `about_us` WHERE `type`='About us'";
+  $select = "SELECT * FROM `about_us` WHERE `type`='Mission'";
   $result1 = mysqli_query($connection, $select);
 
 
