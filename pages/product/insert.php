@@ -31,7 +31,7 @@ if (isset($_POST['add'])) {
 
 
     if ($cat != '') {
-   echo     $insert_p = "INSERT INTO `product`(`p_name`, `p_mrp`, `p_s_price`, `p_quantity`, `p_color`, `p_general_sp`, `p_item_weigth`, `p_item_warranty`, `p_size`, `p_origin_country`, `p_shop_fee`, `p_extra_sp`, `p_short_desc`, `p_long_desc`, `p_mete_title`, `p_meta_desc`, `p_meta_keyword`, `p_status`, `p_categries_name`,`p_categries_sub_name`) VALUES ('$name','$mrp','$price','$qty','$color','$p_general_sp','$p_item_weigth','$p_item_warranty','$p_size','$p_origin_country','$p_shop_fee','$p_extra_sp','$p_short_desc','$p_long_desc','$p_mete_title','$p_meta_desc','$p_meta_keyword','$status','$cat','$all_sub_cat')";
+        $insert_p = "INSERT INTO `product`(`p_name`, `p_mrp`, `p_s_price`, `p_quantity`, `p_color`, `p_general_sp`, `p_item_weigth`, `p_item_warranty`, `p_size`, `p_origin_country`, `p_shop_fee`, `p_extra_sp`, `p_short_desc`, `p_long_desc`, `p_mete_title`, `p_meta_desc`, `p_meta_keyword`, `p_status`, `p_categries_name`,`p_categries_sub_name`) VALUES ('$name','$mrp','$price','$qty','$color','$p_general_sp','$p_item_weigth','$p_item_warranty','$p_size','$p_origin_country','$p_shop_fee','$p_extra_sp','$p_short_desc','$p_long_desc','$p_mete_title','$p_meta_desc','$p_meta_keyword','$status','$cat','$all_sub_cat')";
         $p_result = mysqli_query($connection, $insert_p);
         if ($p_result) {
 
@@ -93,21 +93,21 @@ $result2 = mysqli_query($connection, $select1);
                                         while ($row = mysqli_fetch_array($result2)) {
 
                                     ?>
-                                            <option value="<?php echo $row['c_name']; ?>"><?php echo $row['c_name']; ?></option>
+                                            <option value="<?php echo $row['c_id']; ?>"><?php echo $row['c_name']; ?></option>
 
                                     <?php }
                                     } ?>
                                 </select>
 
                             </div>
-                            <div class="md-form col-sm-4">
+                            <!-- <div class="md-form col-sm-4">
                                 <sub class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</sub>
                                 <select id="all_sub_cat" name="cat" class="form-control validate" placeholder="Enter Caregorie Name">
                                     <option selected disabled>Choose Categries..</option>
 
                                 </select>
 
-                            </div>
+                            </div> -->
 
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Name</sub>

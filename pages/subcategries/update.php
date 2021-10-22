@@ -71,54 +71,51 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 
 
                                         <form method="post" enctype="multipart/form-data" class="">
+                                            <div class="container">
+                                                <div class="row">
 
-                                            <div class="mb-3">
+
+                                                    <div class="md-form col-sm-4  ">
+                                                        <label class="" data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</label>
+                                                        <select name="cat_id" class="form-control" placeholder="Enter Caregorie Name">
+                                                            <?php if ($sub_categories_name == '') { ?>
+                                                                <option selected disabled>Choose Categries..</option>
+                                                            <?php } else { ?>
+                                                                <option selected value="<?php echo $sub_categories_name ?>"><?php echo $sub_categories_name ?></option>
+                                                            <?php } ?>
+                                                            <?php
+
+                                                            if (mysqli_num_rows($result2) > 0) {
+                                                                while ($row = mysqli_fetch_array($result2)) {
+
+                                                            ?>
+                                                                    <option value="<?php echo $row['c_name']; ?>"><?php echo $row['c_name']; ?></option>
+
+                                                            <?php }
+                                                            } ?>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-sm-4 mb-3">
 
 
-                                                <label for="exampleInputEmail1" class="form-label">Id</label>
-                                                <input disabled type="text" value="<?php echo $id; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" pattern="[A-Za-z0-9]+">
+                                                        <label for="exampleInputEmail1" class="form-label">Sub Categories Name</label>
+                                                        <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
+                                                    </div>
+                                                    <div class="form-group  col-sm-4 ">
+                                                        <label for="exampleFormControlSelect1">Select Status</label>
+                                                        <select name="status" class="form-control" id="exampleFormControlSelect1">
+
+                                                            <option value='1'>Active</option>
+                                                            <option value='0'>DeActive</option>
+
+                                                        </select>
+                                                    </div>
+                                                    <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
+                                                    <h3><?php echo $msg; ?></h3>
+                                                </div>
                                             </div>
-
-                                            <div class="md-form ">
-                                                <label class="" data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</label>
-                                                <select name="cat_id" class="form-control" placeholder="Enter Caregorie Name">
-                                                    <?php if ($sub_categories_name == '') { ?>
-                                                        <option selected disabled>Choose Categries..</option>
-                                                    <?php } else { ?>
-                                                        <option selected value="<?php echo $sub_categories_name ?>"><?php echo $sub_categories_name ?></option>
-                                                    <?php } ?>
-                                                    <?php
-
-                                                    if (mysqli_num_rows($result2) > 0) {
-                                                        while ($row = mysqli_fetch_array($result2)) {
-
-                                                    ?>
-                                                            <option value="<?php echo $row['c_name']; ?>"><?php echo $row['c_name']; ?></option>
-
-                                                    <?php }
-                                                    } ?>
-                                                </select>
-
-                                            </div>
-                                            <div class="mb-3">
-
-
-                                                <label for="exampleInputEmail1" class="form-label">Sub Categories Name</label>
-                                                <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1">Select Status</label>
-                                                <select name="status" class="form-control" id="exampleFormControlSelect1">
-
-                                                    <option value='1'>Active</option>
-                                                    <option value='0'>DeActive</option>
-
-                                                </select>
-                                            </div>
-                                            <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
-                                            <h3><?php echo $msg; ?></h3>
                                         </form>
 
                                     </div>
@@ -129,9 +126,9 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 
                 </section>
 
-                </div>                  
-                <?php include '../navfootersider/footer.php'; ?>
-                <?php include '../navfootersider/foot.php'; ?>
+            </div>
+            <?php include '../navfootersider/footer.php'; ?>
+            <?php include '../navfootersider/foot.php'; ?>
 
 
         </body>

@@ -82,7 +82,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                 <!-- /.card-header -->
             
                 <div class="card-body">
-
+                <div class="table-responsive ">
                   <table id="example1" class="table table-bordered table-striped">
 
                     <thead>
@@ -134,6 +134,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       </tr>
                     </tfoot>
                   </table>
+                </div>
                 </div>
                 <!-- /.card-body -->
               </div>

@@ -7,6 +7,8 @@ $row = "";
 include '../../AdminLogin/function.inc.php';
 include '../../connection.inc.php';
 
+
+
 if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
     $id = $_GET['edit'];
 
@@ -16,6 +18,9 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
         $row = mysqli_fetch_array($result);
         $id = $row['id'];
         $name = $row['title'];
+        $image1 = $row['images'];
+        $link = $row['youtube'];
+        $description = $row['description'];
         $status = $row['status'];
 
 ?>
@@ -51,45 +56,68 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                         </div><!-- /.container-fluid -->
 
                     </section>
+
                     <section class="card-body">
-                        <form method="post" enctype="multipart/form-data">
+                        <div class="container">
 
-                            <div class="mb-3">
-
-
-                                <label for="exampleInputEmail1" class="form-label">Id</label>
-                                <input disabled type="text" value="<?php echo $id; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" pattern="[A-Za-z0-9]+">
-
-                            </div>
-                            <div class="mb-3">
+                            <form method="post" enctype="multipart/form-data">
+                                <div class="row">
+                   
+                   
+                                    <div class="mb-3 col-sm-6">
 
 
-                                <label for="exampleInputEmail1" class="form-label">Title</label>
-                                <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <label for="exampleInputEmail1" class="form-label">Title</label>
+                                        <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-                            </div>
-                            <div class="mb-3">
+                                    </div>
+                                    <div class="mb-3 col-sm-6">
 
 
-                                <label for="exampleInputEmail1" class="form-label">Title</label>
-                                <textarea name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><?php echo $name; ?></textarea>
+                                        <label for="exampleInputEmail1" class="form-label">Image</label>
+                                        <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Select Status</label>
-                                <select name="status" class="form-control" id="exampleFormControlSelect1">
+                                    </div>
+                                    <div class="mb-3 col-sm-6">
 
-                                    <option value='1'>Active</option>
-                                    <option value='0'>DeActive</option>
 
-                                </select>
-                            </div>
-                            <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
-                            <h3><?php echo $msg; ?></h3>
-                        </form>
+                                        <label for="exampleInputEmail1" class="form-label">Link</label>
+                                        <input type="text" name="link" value="<?php echo $link; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                    </div>
+
+                                    <div class="form-group col-sm-6">
+                                        <label for="exampleFormControlSelect1">Select Status</label>
+                                        <select name="status" class="form-control" id="exampleFormControlSelect1">
+
+                                            <option value='1'>Active</option>
+                                            <option value='0'>DeActive</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 col-sm-12">
+
+
+                                        <label for="exampleInputEmail1" class="form-label">Description</label>
+                                        <textarea name="msg" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><?php echo $description; ?></textarea>
+
+                                    </div>
+
+                                    <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
+                                    <h3><?php echo $msg; ?></h3>
+                                </div>
+                            </form>
+
+                        </div>
+                        
                     </section>
+                </div>
+        
+                  
                     <?php include '../navfootersider/foot.php'; ?>
+                    <?php include '../navfootersider/footer.php'; ?>
         </body>
+        <script src="../../ckeditor/ckeditor.js"></script>
 
         </html>
 <?php
@@ -101,14 +129,38 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
     header('location: ../../pages/keypepole/keypepole.php');
 }
 if (isset($_POST['Submit'])) {
-    $cat = simplename($_POST['name']);
-    $status = simplename($_POST['status']);
+    $title = simplename($_POST['name']);
+    $link=$_POST['link'];
+
+    $description=$_POST['msg'];
+    $status = $_POST['status'];
+// updating only image
+    if(!empty($_FILES['image']['tmp_name'])){
+        $image=addslashes(file_get_contents($_FILES['image']['tmp_name']));
+        $update = "UPDATE `about_us` SET `images`='$image' WHERE  id=$id";
+            $result = mysqli_query($connection, $update);
+        }
+
+        // updating all data except image
     if ($status == 1 || $status == 0) {
 
-        $update = "UPDATE `keypepole` SET `name`='$cat',`status`='$status' WHERE id=$id";
+        $update = "UPDATE `about_us` SET `title`='$title',`description`='$description',`youtube`='$link',`status`='$status' WHERE  id=$id";
         $result = mysqli_query($connection, $update);
         if ($result > 0) {
-            header('location: ../../pages/keypepole/keypepole.php');
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success</strong> Your Data Successfully Added into the Database
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>';
+
+            echo "<script>
+            setTimeout(function() {
+                window.location.replace('about.php');
+
+              }, 1000);
+
+        </script>";
         } else {
             echo "<p class='col'>data already exits</p>";
         }
@@ -117,4 +169,17 @@ if (isset($_POST['Submit'])) {
         echo $msg;
     }
 }
+
 ?>
+
+<script type="text/javascript">
+    // Initialize CKEditor
+    //CKEDITOR.inline( 'short_desc' );
+
+    CKEDITOR.replace('msg', {
+
+        width: "100%",
+        height: "200px"
+
+    });
+</script>

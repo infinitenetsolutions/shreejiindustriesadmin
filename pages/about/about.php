@@ -9,10 +9,10 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
 
 ?>
-<script>
+  <script>
 
 
-</script>
+  </script>
   <!DOCTYPE html>
   <html>
 
@@ -70,7 +70,6 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
           <!-- <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new Pepole
                   </a> -->
         </section>
-
         <!-- Main content -->
         <section class="content">
           <div class="row">
@@ -89,85 +88,90 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                   include 'insert.php';
                   // include 'update.php';
                   ?>
-                
+
                   <div class="card-body">
+                    <div class=" table-responsive">
+                      <table id="example1" class="table table-bordered table-striped">
 
-                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Section</th>
+                            <th>link</th>
+                            <th>image</th>
 
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Title</th>
-                          <th>Section</th>
-                          <th>link</th>
-                          <th>image</th>
-                         
-                          <th>date</th>
-                          <th>Deatails</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
-                          <!-- <th>Action3</th> -->
-                        </tr>
-                      </thead>
+                            <th>date</th>
+                            <th>Deatails</th>
+                            <th>Action1</th>
+                            <th>Action2</th>
+                            <!-- <th>Action3</th> -->
+                          </tr>
+                        </thead>
 
-                      <tbody>
+                        <tbody>
 
-                        <?php
+                          <?php
 
-                        if (mysqli_num_rows($result1) > 0) {
-                          while ($rows = mysqli_fetch_array($result1)) {
+                          if (mysqli_num_rows($result1) > 0) {
+                            while ($rows = mysqli_fetch_array($result1)) {
 
-                        ?>
-                            <tr>
-                              <td><?php echo '1'?></td>
-                              <td><?php echo $rows['title']; ?></td>
-                              <td><?php echo $rows['type']; ?></td>
-                              <td><?php echo $rows['youtube']; ?></td>
-                              <td><?php echo '<img class="mini" src="data:image/jpeg;base64,' . base64_encode($rows['images']) . '"/>'; ?></td>
-                   
-                              <td><?php echo $rows['date']; ?></td>
-                              <td> <a href="https://localhost/naamyaa/about.php">more</a> </td>
-                              <td><a href="update.php?edit=<?php echo $rows['id']; ?>" class="btn btn-warning">Update</a></td>
-                              <!-- <td> <a href="delete.php?delete=<?php //echo $rows['id']; ?>" class="btn btn-danger">Delete</a> -->
-                              <td> <?php
-                                    if ($rows['status'] == 1) {
-                                      echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['id'] . "'>Active</a>";
-                                    } else {
-                                      echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['id'] . "'>Deactive</a>";
-                                    }
+                          ?>
+                              <tr>
+                                <td><?php echo '1' ?></td>
+                                <td><?php echo $rows['title']; ?></td>
+                                <td><?php echo $rows['type']; ?></td>
+                                <td><?php echo $rows['youtube']; ?></td>
+                                <td><?php echo '<img class="mini" src="data:image/jpeg;base64,' . base64_encode($rows['images']) . '"/>'; ?></td>
 
-                                    ?>
-                              </td>
+                                <td><?php echo $rows['date']; ?></td>
+                                <td> <a href="https://localhost/naamyaa/about.php">more</a> </td>
+                                <td><a href="update.php?edit=<?php echo $rows['id']; ?>" class="btn btn-warning">Update</a></td>
+                                <!-- <td> <a href="delete.php?delete=<?php //echo $rows['id']; 
+                                                                      ?>" class="btn btn-danger">Delete</a> -->
+                                <td> <?php
+                                      if ($rows['status'] == 1) {
+                                        echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['id'] . "'>Active</a>";
+                                      } else {
+                                        echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['id'] . "'>Deactive</a>";
+                                      }
 
-                            </tr>
-                        <?php }
-                        } ?>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                        <tr>
-                        <th>ID</th>
-                          <th>Name</th>
-                          <th>Address</th>
-                          <th>post</th>
-                          <th>image</th>
-                          <th>date</th>
-                          <th>Deatails</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
-                          <!-- <th>Action3</th> -->
-                        </tr>
-                        </tr>
-                      </tfoot>
-                    </table>
+                                      ?>
+                                </td>
+
+                              </tr>
+                          <?php }
+                          } ?>
+                        </tbody>
+                        <tfoot>
+
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>post</th>
+                            <th>image</th>
+                            <th>date</th>
+                            <th>Deatails</th>
+                            <th>Action1</th>
+                            <th>Action2</th>
+                            <!-- <th>Action3</th> -->
+
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
                   </div>
                   <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
               </div>
+
               <!-- /.col -->
             </div>
-            <!-- /.row -->
+          </div>
+
+          <!-- /.row -->
         </section>
         <!-- /.content -->
       </div>

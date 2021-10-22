@@ -50,41 +50,38 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                     </div><!-- /.container-fluid -->
                 </section>
                 <section class="content card ">
-                <div class="col-12">
-                <div class="card-body">
-                    <form method="post" enctype="multipart/form-data">
+                    <div class="col-12">
+                        <div class="card-body">
+                            <form method="post" enctype="multipart/form-data">
+                                <div class="container">
+                                    <div class="row">
 
-                        <div class="mb-3">
+                                        <div class="mb-3 col-sm-6">
 
 
-                            <label for="exampleInputEmail1" class="form-label">Id</label>
-                            <input disabled type="text" value="<?php echo $id; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" pattern="[A-Za-z0-9]+">
+                                            <label for="exampleInputEmail1" class="form-label">Categorie Name</label>
+                                            <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="exampleFormControlSelect1">Select Status</label>
+                                            <select name="status" class="form-control" id="exampleFormControlSelect1">
+
+                                                <option value='1'>Active</option>
+                                                <option value='0'>DeActive</option>
+
+                                            </select>
+                                        </div>
+                                        <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
+                                        <h3><?php echo $msg; ?></h3>
+                                    </div>
+                                </div>
+                            </form>
 
                         </div>
-                        <div class="mb-3">
-
-
-                            <label for="exampleInputEmail1" class="form-label">Categorie Name</label>
-                            <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Select Status</label>
-                            <select name="status" class="form-control" id="exampleFormControlSelect1">
-
-                                <option value='1'>Active</option>
-                                <option value='0'>DeActive</option>
-
-                            </select>
-                        </div>
-                        <button type="submit" name="Submit" class="btn btn-primary centre">Submit</button>
-                        <h3><?php echo $msg; ?></h3>
-                    </form>
-
-                </div>
                 </section>
             </div>
-    </div>
+            </div>
 
             <?php include '../navfootersider/footer.php'; ?>
             <?php include '../navfootersider/foot.php'; ?>

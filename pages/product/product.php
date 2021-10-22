@@ -61,73 +61,75 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                 // include 'uploadimages.php';
                 // include 'update.php';
                 ?>
-         
+
                 <div class="card-body">
-                <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
-                </a>
-                  <table id="example1" class="table table-bordered table-striped">
+                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
+                  </a>
+                  <div class="table-responsive ">
+                    <table id="example1" class="table table-bordered table-striped">
 
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>MRP</th>
-                        <th>PRICE</th>
-                        <th>Quantity</th>
-                        <th>color</th>
-                        <th>Details</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>MRP</th>
+                          <th>PRICE</th>
+                          <th>Quantity</th>
+                          <th>color</th>
+                          <th>Details</th>
+                          <th>Status</th>
+                          <th>Action</th>
 
-                      </tr>
-                    </thead>
+                        </tr>
+                      </thead>
 
-                    <tbody>
+                      <tbody>
 
-                      <?php
+                        <?php
 
-                      if (mysqli_num_rows($result) > 0) {
-                        while ($rows = mysqli_fetch_array($result)) {
+                        if (mysqli_num_rows($result) > 0) {
+                          while ($rows = mysqli_fetch_array($result)) {
 
-                      ?>
-                          <tr>
-                            <td><?php echo $rows['p_id']; ?></td>
-                            <td><?php echo $rows['p_name']; ?></td>
-                            <td><?php echo $rows['p_mrp']; ?></td>
-                            <td><?php echo $rows['p_s_price']; ?></td>
-                            <td><?php echo $rows['p_quantity']; ?></td>
+                        ?>
+                            <tr>
+                              <td><?php echo $rows['p_id']; ?></td>
+                              <td><?php echo $rows['p_name']; ?></td>
+                              <td><?php echo $rows['p_mrp']; ?></td>
+                              <td><?php echo $rows['p_s_price']; ?></td>
+                              <td><?php echo $rows['p_quantity']; ?></td>
 
-                            <td><?php echo $rows['p_color']; ?></td>
-                            <td> <a href="details.php?read=<?php echo $rows['p_id']; ?>" class="text-success">More..</a>
-                            <td> <?php
-                                  if ($rows['p_status'] == 1) {
-                                    echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['p_id'] . "'>Active</a>";
-                                  } else {
-                                    echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['p_id'] . "'>Deactive</a>";
-                                  }
+                              <td><?php echo $rows['p_color']; ?></td>
+                              <td> <a href="details.php?read=<?php echo $rows['p_id']; ?>" class="text-success">More..</a>
+                              <td> <?php
+                                    if ($rows['p_status'] == 1) {
+                                      echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['p_id'] . "'>Active</a>";
+                                    } else {
+                                      echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['p_id'] . "'>Deactive</a>";
+                                    }
 
-                                  ?>
-                            </td>
-                            <td> <a href="delete.php?delete=<?php echo $rows['p_id']; ?>" class="btn btn-danger">Delete</a> </td>
-                          </tr>
-                      <?php }
-                      } ?>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>MRP</th>
-                        <th>PRICE</th>
-                        <th>Quantity</th>
-                        <th>color</th>
-                        <th>Details</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                                    ?>
+                              </td>
+                              <td> <a href="delete.php?delete=<?php echo $rows['p_id']; ?>" class="btn btn-danger">Delete</a> </td>
+                            </tr>
+                        <?php }
+                        } ?>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>MRP</th>
+                          <th>PRICE</th>
+                          <th>Quantity</th>
+                          <th>color</th>
+                          <th>Details</th>
+                          <th>Status</th>
+                          <th>Action</th>
 
-                      </tr>
-                    </tfoot>
-                  </table>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -149,8 +151,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
-<?php include '../navfootersider/foot.php' ?>
-<script src="./js/ajax.js"></script>
+  <?php include '../navfootersider/foot.php' ?>
+  <script src="./js/ajax.js"></script>
 </body>
 
 </html>

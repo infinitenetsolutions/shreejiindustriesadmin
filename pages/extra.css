@@ -40,4 +40,16 @@ margin-left: 20%;
 .modal-dialog{
     max-width: 900px;
 }
-
+.mini{
+    width: 120px;
+    height: 150px;
+}
+.brand-link .brand-image {
+    float: left;
+    line-height: .8;
+    margin-left: .8rem;
+    margin-right: .5rem;
+    margin-top: -3px;
+    max-height: 43px !important ;
+    width: auto;
+}
