@@ -26,9 +26,27 @@ if (isset($_POST['add'])) {
                 }
                 if ($current_id) {
 
-                    echo "<p class='success'>Categorie Added successfully Refresh the page</p>";
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success</strong> Your Data Successfully Added into the Database
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>';
+        
+                    echo "<script>
+                    setTimeout(function() {
+                        window.location.replace('categoriesData.php');
+        
+                      }, 1000);
+        
+                </script>";
                 } else {
-                    echo "<p class='col'>data already exits</p>";
+                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Alert!</strong>  '.$connection->error.'
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>';
                 }
             }
         }

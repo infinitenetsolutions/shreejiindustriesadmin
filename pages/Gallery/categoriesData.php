@@ -52,12 +52,12 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Categries</h1>
+                <h1>Slider Images</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">Categries Images Data</li>
+                  <li class="breadcrumb-item active">Categries Slider Images</li>
                 </ol>
               </div>
             </div>
@@ -82,9 +82,10 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                   include 'insert.php';
                   // include 'update.php';
                   ?>
+               
+                  <div class="card-body">
                   <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
                   </a>
-                  <div class="card-body">
                   <div class="table-responsive ">
                     <table id="example1" class="table table-bordered table-striped">
 

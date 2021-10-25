@@ -40,13 +40,13 @@
                                 <p>Categories</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="../subcategries/categories.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>SubCategories
                                 </p>
                             </a>
-                        </li>
+                        </li> -->
 
                     </ul>
                 </li>
@@ -128,7 +128,7 @@
 
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <!-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="../Gallery/home.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -146,12 +146,12 @@
                             </a>
                         </li>
 
-                    </ul>
+                    </ul> -->
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="../Gallery/categoriesData.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Categries Images Data
+                                <p>Slider Images
                                 </p>
                             </a>
                         </li>

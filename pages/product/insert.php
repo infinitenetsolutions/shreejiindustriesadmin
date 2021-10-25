@@ -1,37 +1,50 @@
 <?php
 $msg = "";
 $cat = '';
-$all_sub_cat='';
+$all_sub_cat = '';
 $status = " ";
 include '../../AdminLogin/function.inc.php';
 
 
 if (isset($_POST['add'])) {
-
     $cat = $_POST['cat'];
-    $all_sub_cat=$_POST['all_sub_cat'];
+    // $all_sub_cat = $_POST['all_sub_cat'];
+    
     $name = $_POST['name'];
+    $p_code = $_POST['p_code'];
+    $p_model_no = $_POST['p_model_no'];
+    $p_dona_size = $_POST['p_dona_size'];
+    $p_thickness = $_POST['p_thickness'];
+    $p_rate = $_POST['p_rate'];
+    $p_source = $_POST['p_source'];
+    $p_electric_motor = $_POST['p_electric_motor'];
+    $p_motor_make = $_POST['p_motor_make'];
+    $p_weight = $_POST['p_weight'];
+    $p_power_consumption = $_POST['p_power_consumption'];
+    $p_space_required = $_POST['p_space_required'];
+    $p_man_power = $_POST['p_man_power'];
+    $p_accessories = $_POST['p_accessories'];
     $mrp = $_POST['mrp'];
     $price = $_POST['price'];
-    $qty = $_POST['qty'];
-    $color = $_POST['color'];
-    $p_general_sp = $_POST['p_general_sp'];
-    $p_item_weigth = $_POST['p_item_weigth'];
+    $qty = $_POST['color'];
     $p_item_warranty = $_POST['p_item_warranty'];
-    $p_size = $_POST['p_size'];
     $p_origin_country = $_POST['p_origin_country'];
     $p_shop_fee = $_POST['p_shop_fee'];
-    $p_extra_sp = $_POST['p_extra_sp'];
     $p_short_desc = $_POST['p_short_desc'];
     $p_long_desc = $_POST['p_long_desc'];
+
     $p_mete_title = $_POST['p_mete_title'];
     $p_meta_desc = $_POST['p_meta_desc'];
     $p_meta_keyword = $_POST['p_meta_keyword'];
+    $p_long_desc = $_POST['p_long_desc'];
+
+
     $status = $_POST['status'];
 
 
     if ($cat != '') {
-        $insert_p = "INSERT INTO `product`(`p_name`, `p_mrp`, `p_s_price`, `p_quantity`, `p_color`, `p_general_sp`, `p_item_weigth`, `p_item_warranty`, `p_size`, `p_origin_country`, `p_shop_fee`, `p_extra_sp`, `p_short_desc`, `p_long_desc`, `p_mete_title`, `p_meta_desc`, `p_meta_keyword`, `p_status`, `p_categries_name`,`p_categries_sub_name`) VALUES ('$name','$mrp','$price','$qty','$color','$p_general_sp','$p_item_weigth','$p_item_warranty','$p_size','$p_origin_country','$p_shop_fee','$p_extra_sp','$p_short_desc','$p_long_desc','$p_mete_title','$p_meta_desc','$p_meta_keyword','$status','$cat','$all_sub_cat')";
+     echo   $insert_p = "INSERT INTO `product`(`p_name`, `p_code`, `model_no`, `p_thickness`, `p_production_rate`, `p_power_sourse`, `p_electricity_moter`, `p_power_consumsion`, `p_space_required`, `p_man_power`, `p_accessories`, `p_maked`, `p_mrp`, `p_s_price`, `p_color`, `p_quantity`, `p_item_weigth`, `p_item_warranty`, `p_size`, `p_origin_country`, `p_shop_fee`, `p_extra_sp`, `p_short_desc`, `p_long_desc`, `p_mete_title`, `p_meta_desc`, `p_meta_keyword`, `p_status`,`p_categries_name`, `p_categries_sub_name`) VALUES
+         ('$name','$p_code','$p_model_no','$p_thickness','$p_rate','$p_source','$p_electric_motor','$p_power_consumption','$p_space_required','$p_man_power','$p_accessories','$p_motor_make','$mrp','$price','NULL','NULL','$p_weight','$p_item_warranty','$p_dona_size','$p_origin_country','$p_shop_fee','NULL','$p_short_desc','$p_long_desc','$p_mete_title','$p_meta_desc','$p_meta_keyword','$status','$cat','NULL')";
         $p_result = mysqli_query($connection, $insert_p);
         if ($p_result) {
 
@@ -51,7 +64,7 @@ if (isset($_POST['add'])) {
         </script>";
         } else {
             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Alert!</strong> Data Already Exits Please Check Your Input Data
+            <strong>Alert!</strong>  '.$connection->error.'
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -111,65 +124,161 @@ $result2 = mysqli_query($connection, $select1);
 
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Name</sub>
-                                <input name="name" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+                                <input required name="name" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
+
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Product code</sub>
+                                <input required name="p_code" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Model no</sub>
+                                <input required name="p_model_no" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Paper Dona Size</sub>
+                                <input required name="p_dona_size" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Thickness</sub>
+                                <input required name="p_thickness" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Production Rate</sub>
+                                <input required name="p_rate" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Power Source</sub>
+                                <input required name="p_source" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Electric Motor</sub>
+                                <input required name="p_electric_motor" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Motor Make</sub>
+                                <input required name="p_motor_make" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Weight of Machine</sub>
+                                <input required name="p_weight" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Power Consumption</sub>
+                                <input required name="p_power_consumption" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Space Required</sub>
+                                <input required name="p_space_required" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+
+
+
+
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Man Power</sub>
+                                <input required name="p_man_power" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+
+
+
+
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1"> Accessories </sub>
+                                <input required name="p_accessories" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <div class="form-group col-sm">
                                 <sub class="a-color" for="exampleFormControlSelect1">MRP</sub>
-                                <input name="mrp" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Price MRP">
+                                <input required name="mrp" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Price MRP">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Selling Price</sub>
-                                <input name="price" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Real price">
+                                <input required name="price" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Real price">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Quantity</sub>
-                                <input name="qty" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter number of product ">
+                                <input required name="qty" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter number of product ">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Color</sub>
-                                <input name="color" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Number of product color ">
+                                <input required name="color" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Number of product color ">
                             </div>
-                            <div class="form-group col-sm-4">
-                                <sub class="a-color" for="exampleFormControlSelect1">Product General specification</sub>
-                                <input name="p_general_sp" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter General information of the product  ">
-                            </div>
+                         
 
                             <div class="form-group col-sm-4">
-                                <sub class="a-color" for="exampleFormControlSelect1">Product weight</sub>
-                                <input name="p_item_weigth" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Product weight in gram">
-                            </div>
-                            <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Item Warranty</sub>
-                                <input name="p_item_warranty" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Warranty or no">
+                                <input required name="p_item_warranty" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Warranty or no">
                             </div>
-                            <div class="form-group col-sm-4">
-                                <sub class="a-color" for="exampleFormControlSelect1">Product Size </sub>
-                                <input name="p_size" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter the size of the product in inch ">
-                            </div>
+                          
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Origin Country</sub>
-                                <input name="p_origin_country" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter the country of the product ">
+                                <input required name="p_origin_country" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter the country of the product ">
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Shopping fee </sub>
-                                <input name="p_shop_fee" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Shopping fee of the product or no ">
+                                <input required name="p_shop_fee" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Shopping fee of the product or no ">
                             </div>
 
-                            <div class="form-group col-sm-4">
-                                <sub class="a-color" for="exampleFormControlSelect1">Extra specification </sub>
-                                <input name="p_extra_sp" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter some extra Specification">
-                            </div>
+                           
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Short Description</sub>
-                                <input name="p_short_desc" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter short Descrition of the product">
+                                <input required name="p_short_desc" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter short Descrition of the product">
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Long Description</sub>
@@ -177,16 +286,16 @@ $result2 = mysqli_query($connection, $select1);
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Product meta title</sub>
-                                <input name="p_mete_title" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Meta title of the product ">
+                                <input required name="p_mete_title" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Meta title of the product ">
                             </div>
 
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Extra meta Description </sub>
-                                <input name="p_meta_desc" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter meta Descrtption of the product">
+                                <input required name="p_meta_desc" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter meta Descrtption of the product">
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Enter keyword of the product </sub>
-                                <input name="p_meta_keyword" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Keyword of the product">
+                                <input required name="p_meta_keyword" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Keyword of the product">
                             </div>
 
                             <div class="form-group">
