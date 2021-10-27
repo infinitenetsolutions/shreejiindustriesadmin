@@ -80,25 +80,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="./pages/contact/contact.php" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Contact
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">6</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./pages/contact/contact.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Contact us</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
+           
 
                 <li class="nav-item has-treeview">
                     <a href="./pages/user-master/user.php" class="nav-link">
@@ -129,25 +111,7 @@
 
                         </p>
                     </a>
-                    <!-- <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./pages/Gallery/home.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Home</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./pages/Gallery/allcategories.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All categories Images
-                                </p>
-                            </a>
-                        </li>
-
-                    </ul> -->
+                 
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="./pages/Gallery/categoriesData.php" class="nav-link">
@@ -159,6 +123,47 @@
 
                     </ul>
 
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="../contact/contact.php" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            Shreeji Industries  
+                            <i class="fas fa-angle-left right"></i>
+                            <span class="badge badge-info right">6</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>Our Clients</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>Faq</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>Contact us</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/career/" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>Career</p>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="./pages/Gallery/home.php" class="nav-link">

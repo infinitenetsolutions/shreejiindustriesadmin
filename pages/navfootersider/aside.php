@@ -70,24 +70,7 @@
                     </ul>
                 </li>
              
-                <li class="nav-item has-treeview">
-                    <a href="../contact/contact.php" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Contacts
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">6</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
-                                <p>Contact us</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
+             
 
                 <li class="nav-item has-treeview">
                     <a href="../user-master/user.php" class="nav-link">
@@ -128,25 +111,7 @@
 
                         </p>
                     </a>
-                    <!-- <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="../Gallery/home.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Home</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="../Gallery/allcategories.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All categories
-                                </p>
-                            </a>
-                        </li>
-
-                    </ul> -->
+               
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="../Gallery/categoriesData.php" class="nav-link">
@@ -226,7 +191,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="../career/" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>Career</p>
                             </a>
                         </li>

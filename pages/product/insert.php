@@ -9,7 +9,7 @@ include '../../AdminLogin/function.inc.php';
 if (isset($_POST['add'])) {
     $cat = $_POST['cat'];
     // $all_sub_cat = $_POST['all_sub_cat'];
-    
+
     $name = $_POST['name'];
     $p_code = $_POST['p_code'];
     $p_model_no = $_POST['p_model_no'];
@@ -37,14 +37,14 @@ if (isset($_POST['add'])) {
     $p_meta_desc = $_POST['p_meta_desc'];
     $p_meta_keyword = $_POST['p_meta_keyword'];
     $p_long_desc = $_POST['p_long_desc'];
-
+    $BROCHURE = addslashes(file_get_contents($_FILES['BROCHURE']['tmp_name']));
 
     $status = $_POST['status'];
 
 
     if ($cat != '') {
-     echo   $insert_p = "INSERT INTO `product`(`p_name`, `p_code`, `model_no`, `p_thickness`, `p_production_rate`, `p_power_sourse`, `p_electricity_moter`, `p_power_consumsion`, `p_space_required`, `p_man_power`, `p_accessories`, `p_maked`, `p_mrp`, `p_s_price`, `p_color`, `p_quantity`, `p_item_weigth`, `p_item_warranty`, `p_size`, `p_origin_country`, `p_shop_fee`, `p_extra_sp`, `p_short_desc`, `p_long_desc`, `p_mete_title`, `p_meta_desc`, `p_meta_keyword`, `p_status`,`p_categries_name`, `p_categries_sub_name`) VALUES
-         ('$name','$p_code','$p_model_no','$p_thickness','$p_rate','$p_source','$p_electric_motor','$p_power_consumption','$p_space_required','$p_man_power','$p_accessories','$p_motor_make','$mrp','$price','NULL','NULL','$p_weight','$p_item_warranty','$p_dona_size','$p_origin_country','$p_shop_fee','NULL','$p_short_desc','$p_long_desc','$p_mete_title','$p_meta_desc','$p_meta_keyword','$status','$cat','NULL')";
+        echo   $insert_p = "INSERT INTO `product`(`p_name`, `p_code`, `model_no`, `p_thickness`, `p_production_rate`, `p_power_sourse`, `p_electricity_moter`, `p_power_consumsion`, `p_space_required`, `p_man_power`, `p_accessories`, `p_maked`, `p_mrp`, `p_s_price`, `p_color`, `p_quantity`, `p_item_weigth`, `p_item_warranty`, `p_size`, `p_origin_country`, `p_shop_fee`, `p_extra_sp`, `p_short_desc`, `p_long_desc`, `p_mete_title`, `p_meta_desc`, `p_meta_keyword`,`BROCHURE`, `p_status`,`p_categries_name`, `p_categries_sub_name`) VALUES
+         ('$name','$p_code','$p_model_no','$p_thickness','$p_rate','$p_source','$p_electric_motor','$p_power_consumption','$p_space_required','$p_man_power','$p_accessories','$p_motor_make','$mrp','$price','NULL','NULL','$p_weight','$p_item_warranty','$p_dona_size','$p_origin_country','$p_shop_fee','NULL','$p_short_desc','$p_long_desc','$p_mete_title','$p_meta_desc','$p_meta_keyword','$BROCHURE','$status','$cat','NULL')";
         $p_result = mysqli_query($connection, $insert_p);
         if ($p_result) {
 
@@ -64,7 +64,7 @@ if (isset($_POST['add'])) {
         </script>";
         } else {
             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Alert!</strong>  '.$connection->error.'
+            <strong>Alert!</strong>  ' . $connection->error . '
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -86,7 +86,7 @@ $result2 = mysqli_query($connection, $select1);
 <div class="modal fade" id="insert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="modal-header text-center">
                     <h4 class="modal-title w-100 font-weight-bold">Categories</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -259,13 +259,13 @@ $result2 = mysqli_query($connection, $select1);
                                 <sub class="a-color" for="exampleFormControlSelect1">Color</sub>
                                 <input required name="color" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Number of product color ">
                             </div>
-                         
+
 
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Item Warranty</sub>
                                 <input required name="p_item_warranty" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Warranty or no">
                             </div>
-                          
+
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Origin Country</sub>
                                 <input required name="p_origin_country" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter the country of the product ">
@@ -275,7 +275,7 @@ $result2 = mysqli_query($connection, $select1);
                                 <input required name="p_shop_fee" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Shopping fee of the product or no ">
                             </div>
 
-                           
+
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Short Description</sub>
                                 <input required name="p_short_desc" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter short Descrition of the product">
@@ -296,6 +296,10 @@ $result2 = mysqli_query($connection, $select1);
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Enter keyword of the product </sub>
                                 <input required name="p_meta_keyword" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Keyword of the product">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1"> Upload BROCHURE </sub>
+                                <input required name="BROCHURE" type="file" class="form-control" id="exampleFormControlSelect1" placeholder="upload BROCHURE">
                             </div>
 
                             <div class="form-group">
