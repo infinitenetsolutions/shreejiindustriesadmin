@@ -43,7 +43,7 @@ if (isset($_POST['add'])) {
 
 
     if ($cat != '') {
-        echo   $insert_p = "INSERT INTO `product`(`p_name`, `p_code`, `model_no`, `p_thickness`, `p_production_rate`, `p_power_sourse`, `p_electricity_moter`, `p_power_consumsion`, `p_space_required`, `p_man_power`, `p_accessories`, `p_maked`, `p_mrp`, `p_s_price`, `p_color`, `p_quantity`, `p_item_weigth`, `p_item_warranty`, `p_size`, `p_origin_country`, `p_shop_fee`, `p_extra_sp`, `p_short_desc`, `p_long_desc`, `p_mete_title`, `p_meta_desc`, `p_meta_keyword`,`BROCHURE`, `p_status`,`p_categries_name`, `p_categries_sub_name`) VALUES
+        $insert_p = "INSERT INTO `product`(`p_name`, `p_code`, `model_no`, `p_thickness`, `p_production_rate`, `p_power_sourse`, `p_electricity_moter`, `p_power_consumsion`, `p_space_required`, `p_man_power`, `p_accessories`, `p_maked`, `p_mrp`, `p_s_price`, `p_color`, `p_quantity`, `p_item_weigth`, `p_item_warranty`, `p_size`, `p_origin_country`, `p_shop_fee`, `p_extra_sp`, `p_short_desc`, `p_long_desc`, `p_mete_title`, `p_meta_desc`, `p_meta_keyword`,`BROCHURE`, `p_status`,`p_categries_name`, `p_categries_sub_name`) VALUES
          ('$name','$p_code','$p_model_no','$p_thickness','$p_rate','$p_source','$p_electric_motor','$p_power_consumption','$p_space_required','$p_man_power','$p_accessories','$p_motor_make','$mrp','$price','NULL','NULL','$p_weight','$p_item_warranty','$p_dona_size','$p_origin_country','$p_shop_fee','NULL','$p_short_desc','$p_long_desc','$p_mete_title','$p_meta_desc','$p_meta_keyword','$BROCHURE','$status','$cat','NULL')";
         $p_result = mysqli_query($connection, $insert_p);
         if ($p_result) {
@@ -54,10 +54,13 @@ if (isset($_POST['add'])) {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>';
-
+            $get_product_id = "SELECT MAX(p_id) as id FROM `product` WHERE 1";
+            $get_p_result=mysqli_query($connection,$get_product_id);
+            $data=mysqli_fetch_array($get_p_result);
+            $pro_id=$data['id'];
             echo "<script>
             setTimeout(function() {
-                window.location.replace('uploadimages.php');
+                window.location.replace('uploadimages.php?pro=$pro_id');
 
               }, 1000);
 

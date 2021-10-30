@@ -1,4 +1,5 @@
 <?php
+$msg='';
 include '../../connection.inc.php';
 
 if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
@@ -7,8 +8,42 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 } else {
     header('location:./AdminLogin/super_Admin.php');
 }
+$product_id=$_GET['pro'];
 
 
+if (isset($_POST['submit'])) {
+  
+    $num_img = count($_FILES['img']['name']);
+    for ($i = 0; $i < $num_img; $i++) {
+        $img_name = $_FILES['img']['name'][$i];
+        $images = addslashes(file_get_contents($_FILES['img']['tmp_name'][$i]));
+        $img_qury = "INSERT INTO `product_images`(`name`, `images`, `product_img_id`) VALUES ('$img_name','$images','$product_id')";
+        $result = mysqli_query($connection, $img_qury);
+    }
+    if ($result) {
+        $msg= '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success</strong> Your Data Successfully Added into the Database
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
+
+        echo "<script>
+        setTimeout(function() {
+            window.location.replace('product.php');
+
+          }, 1000);
+
+    </script>";
+    } else {
+        $msg= '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Alert!</strong>  ' . $connection->error . '
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -72,6 +107,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
             <section class="content">
                 <div class="row">
                     <div class="col-12">
+
                         <div class="card">
 
                             <!-- /.card -->
@@ -80,6 +116,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                                 <div class="card-header">
                                     <h3 class="card-title">All Categries of The Product</h3>
                                 </div>
+                                <?php echo $msg; ?>
                                 <!-- /.card-header -->
                                 <?php
 
@@ -87,22 +124,29 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                                 ?>
                                 <br>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-2 imgUp">
-                                            <div class="imagePreview"></div>
-                                            <label class="btn btn-primary">
-                                                Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
-                                            </label>
-                                        </div><!-- col-2 -->
-                                        <i class="fa fa-plus imgAdd"></i>
-                                    </div><!-- row -->
-                                </div><!-- container -->
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-2 imgUp">
+                                                <div class="imagePreview"></div>
+                                                <label class="btn btn-primary">
+                                                    Upload<input type="file" name="img[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                                </label>
+                                            </div><!-- col-2 -->
+                                            <i class="fa fa-plus imgAdd"></i>
+                                        </div><!-- row -->
+                                    </div><!-- container -->
+                                    <div class="text-center mb-2 mt-1">
+                                        <button class="btn btn-success" type="submit" name="submit">Submit</button>
+                                    </div>
+                                </form>
 
                                 <!-- //here to add some extra data -->
                             </div>
+
                             <!-- /.card -->
                         </div>
+
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
@@ -147,7 +191,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
     </script>
     <script>
         $(".imgAdd").click(function() {
-            $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
+            $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" name="img[]" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
         });
         $(document).on("click", "i.del", function() {
             // 	to remove card

@@ -10,13 +10,14 @@ include '../../connection.inc.php';
 if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
     $id = $_GET['edit'];
 
-    $select_single_data = "SELECT * FROM `categories` WHERE c_id=$id";
+    $select_single_data = "SELECT * FROM `our_clients` WHERE id=$id";
     $result = mysqli_query($connection, $select_single_data);
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
-        $id = $row['c_id'];
-        $name = $row['c_name'];
-        $status = $row['c_status'];
+        $id = $row['id'];
+        $name = $row['name'];
+        $images = $row['images'];
+        $status = $row['status'];
 
 ?>
 
@@ -56,14 +57,21 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                 <div class="container">
                                     <div class="row">
 
-                                        <div class="mb-3 col-sm-6">
+                                        <div class="mb-3 col-sm-4">
 
 
                                             <label for="exampleInputEmail1" class="form-label">Categorie Name</label>
                                             <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                         </div>
-                                        <div class="form-group col-sm-6">
+                                        <div class="mb-3 col-sm-4">
+
+
+                                            <label for="exampleInputEmail1" class="form-label">Images</label>
+                                            <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                        </div>
+                                        <div class="form-group col-sm-4">
                                             <label for="exampleFormControlSelect1">Select Status</label>
                                             <select name="status" class="form-control" id="exampleFormControlSelect1">
 
@@ -96,15 +104,21 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 } else {
     header('location: ../../pages/categries/categories.php');
 }
+$url = $_SERVER['HTTP_REFERER'];
 if (isset($_POST['Submit'])) {
     $cat = simplename($_POST['name']);
     $status = simplename($_POST['status']);
+    if ($_FILES > 0) {
+     echo   $images = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+    }
     if ($status == 1 || $status == 0) {
 
-        $update = "UPDATE `categories` SET `c_name`='$cat',`c_status`='$status' WHERE c_id=$id";
+        $update = "UPDATE `our_clients` SET `name`='$cat',`images`='$images',`status`='$status' WHERE id=$id";
         $result = mysqli_query($connection, $update);
         if ($result > 0) {
-            header('location: ../../pages/categries/categories.php');
+            echo "<script>
+          window.location.replace('" . $url . "')
+      </script>";
         } else {
             echo "<p class='col'>data already exits</p>";
         }

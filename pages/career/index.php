@@ -82,6 +82,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                   include 'insert.php';
                   // include 'update.php';
                   ?>
+                  <!-- here is all massages for the data -->
 
                   <div class="card-body">
                     <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
@@ -112,6 +113,30 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
 
                           ?>
+                              <!-- Button trigger modal -->
+
+
+                              <!-- Modal -->
+                              <div class="modal fade" id="exampleModal<?php echo $rowimage['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Candidate Massages </h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <?php echo $rowimage['massage']; ?>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- massage end -->
                               <tr>
                                 <td><?php echo $i ?></td>
                                 <td><?php echo $rowimage['job_name']; ?></td>
@@ -124,7 +149,9 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                                     <img height="30px" width="30px" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($rowimage['image']) . '"' ?> class="img-fluid mb-2" alt="Slider Images" />
                                   </a>
                                 </td>
-                                <td><a href="update.php?edit=<?php echo $rowimage['id']; ?>" class="btn btn-success">Read more</a></td>
+                                <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal<?php echo $rowimage['id']; ?>">
+                                    Read more
+                                  </button></td>
                                 <td> <a href="delete.php?delete=<?php echo $rowimage['id']; ?>" class="btn btn-danger">Delete</a>
                                   <!-- <td> <?php
                                             //   if ($rowimage['status'] == 1) {
@@ -137,7 +164,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                               </td> -->
 
                               </tr>
-                          <?php $i++; }
+                          <?php $i++;
+                            }
                           }
                           ?>
                         </tbody>

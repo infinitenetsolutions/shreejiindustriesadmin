@@ -92,13 +92,12 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         <thead>
                           <tr>
                             <th>S no</th>
-                            <th>Job Type</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Contact No</th>
+                            <th>Clints name</th>
                             <th>Images</th>
-                            <th>Massage</th>
+                            <!-- <th>Description</th> -->
+                            <th>Action1</th>
                             <th>Action2</th>
+                            <th>Action3</th>
                           </tr>
                         </thead>
 
@@ -114,17 +113,16 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           ?>
                               <tr>
                                 <td><?php echo $i ?></td>
-                                <td><?php echo $rowimage['job_name']; ?></td>
+                              
                                 <td><?php echo $rowimage['name']; ?></td>
-                                <td><?php echo $rowimage['email']; ?></td>
-                                <td><?php echo $rowimage['phone']; ?></td>
+                          
 
                                 <td>
-                                  <a <?php echo ' href="data:image/jpeg;base64,' . base64_encode($rowimage['image']) . '"' ?> data-toggle="lightbox" data-title="Slider Images">
-                                    <img height="30px" width="30px" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($rowimage['image']) . '"' ?> class="img-fluid mb-2" alt="Slider Images" />
+                                  <a <?php echo ' href="data:image/jpeg;base64,' . base64_encode($rowimage['images']) . '"' ?> data-toggle="lightbox" data-title="Slider Images">
+                                    <img height="30px" width="30px" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($rowimage['images']) . '"' ?> class="img-fluid mb-2" alt="Slider Images" />
                                   </a>
                                 </td>
-                                <td><a href="update.php?edit=<?php echo $rowimage['id']; ?>" class="btn btn-success">Read more</a></td>
+                                <td><a href="update.php?edit=<?php echo $rowimage['id']; ?>" class="btn btn-warning">Update</a></td>
                                 <td> <a href="delete.php?delete=<?php echo $rowimage['id']; ?>" class="btn btn-danger">Delete</a>
                                    <td> <?php
                                               if ($rowimage['status'] == 1) {
@@ -143,14 +141,13 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         </tbody>
                         <tfoot>
                           <tr>
-                            <th>S no</th>
-                            <th>Job Type</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Contact No</th>
+                          <th>S no</th>
+                            <th>Clints name</th>
                             <th>Images</th>
-                            <th>Massages</th>
+                            <!-- <th>Description</th> -->
+                            <th>Action1</th>
                             <th>Action2</th>
+                            <th>Action3</th>
                           </tr>
                         </tfoot>
                       </table>

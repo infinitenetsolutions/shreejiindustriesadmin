@@ -10,8 +10,11 @@ if (isset($_GET['type']) && $_GET['type'] != '') {
 		} else {
 			$status = '0';
 		}
-		$update_status_sql = "update catagries_images set ci_status='$status' where ci_id='$id'";
+		$url = $_SERVER['HTTP_REFERER'];
+		$update_status_sql = "update our_clients set status='$status' where id='$id'";
 		mysqli_query($connection, $update_status_sql);
-        header('location:categoriesData.php');
+		echo "<script>
+		window.location.replace('" . $url . "')
+	</script>";
 	}}
     ?>

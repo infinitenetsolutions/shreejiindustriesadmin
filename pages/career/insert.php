@@ -20,7 +20,7 @@ if (isset($_POST['add'])) {
 
                 $sql = "INSERT INTO `catagries_images`(`ci_name`,`ci_images`, `ci_cat_id`) VALUES ('{$imageProperties['mime']}','{$imgData}','{$cat}')";
 
-                $current_id = mysqli_query($connection, $sql); 
+                $current_id = mysqli_query($connection, $sql);
                 if (isset($current_id)) {
                     // header("Location: listImages.php");
                 }
@@ -32,7 +32,7 @@ if (isset($_POST['add'])) {
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>';
-        
+
                     echo "<script>
                     setTimeout(function() {
                         window.location.replace('categoriesData.php');
@@ -42,7 +42,7 @@ if (isset($_POST['add'])) {
                 </script>";
                 } else {
                     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Alert!</strong>  '.$connection->error.'
+                    <strong>Alert!</strong>  ' . $connection->error . '
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>

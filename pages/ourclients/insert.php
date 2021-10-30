@@ -18,9 +18,9 @@ if (isset($_POST['add'])) {
                 $imgData = addslashes(file_get_contents($_FILES['userImage']['tmp_name']));
                 $imageProperties = getimageSize($_FILES['userImage']['tmp_name']);
 
-                $sql = "INSERT INTO `catagries_images`(`ci_name`,`ci_images`, `ci_cat_id`) VALUES ('{$imageProperties['mime']}','{$imgData}','{$cat}')";
+                $sql = "INSERT INTO `our_clients`(`name`, `images`, `status`) VALUES ('$cat','$imgData','$status')";
 
-                $current_id = mysqli_query($connection, $sql); 
+                $current_id = mysqli_query($connection, $sql);
                 if (isset($current_id)) {
                     // header("Location: listImages.php");
                 }
@@ -32,17 +32,17 @@ if (isset($_POST['add'])) {
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>';
-        
+
                     echo "<script>
                     setTimeout(function() {
-                        window.location.replace('categoriesData.php');
+                        window.location.replace('index.php');
         
                       }, 1000);
         
                 </script>";
                 } else {
                     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Alert!</strong>  '.$connection->error.'
+                    <strong>Alert!</strong>  ' . $connection->error . '
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -73,39 +73,33 @@ $result2 = mysqli_query($connection, $select1);
                     </button>
                 </div>
                 <div class="modal-body mx-3">
-                    <div class="md-form mb-5">
-                        <sub class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</sub>
-                        <select name="cat" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Caregorie Name">
-                            <option selected disabled>Choose Categries..</option>
-                            <?php
+                    <div class="container">
+                        <div class="row">
 
-                            if (mysqli_num_rows($result2) > 0) {
-                                while ($row = mysqli_fetch_array($result2)) {
 
-                            ?>
-                                    <option value="<?php echo $row['c_id']; ?>"><?php echo $row['c_name']; ?></option>
+                            <div class="form-group col-sm-4 ">
+                                <sub class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</sub>
+                                <input name="cat" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Caregorie Name">
 
-                            <?php }
-                            } ?>
-                        </select>
 
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Select Status</sub>
+                                <input name="userImage" type="file" class="form-control" id="exampleFormControlSelect1">
+
+
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <sub class="a-color" for="exampleFormControlSelect1">Select Status</sub>
+                                <select name="status" class="form-control" id="exampleFormControlSelect1">
+
+                                    <option value='1'>Active</option>
+                                    <option value='0'>DeActive</option>
+
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <sub class="a-color" for="exampleFormControlSelect1">Select Status</sub>
-                        <input name="userImage" type="file" class="form-control" id="exampleFormControlSelect1">
-
-
-                    </div>
-                    <div class="form-group">
-                        <sub class="a-color" for="exampleFormControlSelect1">Select Status</sub>
-                        <select name="status" class="form-control" id="exampleFormControlSelect1">
-
-                            <option value='1'>Active</option>
-                            <option value='0'>DeActive</option>
-
-                        </select>
-                    </div>
-
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
                     <button name="add" class="btn btn-default">Add Images</button>
