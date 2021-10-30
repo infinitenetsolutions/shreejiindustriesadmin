@@ -2,14 +2,14 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image" >
+        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image">
         <span class="brand-text font-weight-light">&nbsp;</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-       
+
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -21,7 +21,7 @@
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
-                     
+
                         </p>
                     </a>
 
@@ -30,9 +30,9 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-list-alt"></i>
                         <p>
-                      Categories
+                            Categories
                             <i class="fas fa-angle-left right"></i>
-                      
+
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -56,9 +56,9 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fab fa-product-hunt"></i>
                         <p>
-                          Our Product
+                            Our Product
                             <i class="fas fa-angle-left right"></i>
-                      
+
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -80,7 +80,7 @@
                         </p>
                     </a>
                 </li>
-           
+
 
                 <li class="nav-item has-treeview">
                     <a href="./pages/user-master/user.php" class="nav-link">
@@ -111,7 +111,7 @@
 
                         </p>
                     </a>
-                 
+
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="./pages/Gallery/categoriesData.php" class="nav-link">
@@ -125,10 +125,33 @@
 
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="./pages/Gallery/home.php" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Member 
+
+                            <i class="fas fa-angle-left right"></i>
+
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/Gallery/categoriesData.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="../contact/contact.php" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
-                            Shreeji Industries  
+                            Shreeji Industries
                             <i class="fas fa-angle-left right"></i>
                             <span class="badge badge-info right">6</span>
                         </p>
