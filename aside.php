@@ -71,16 +71,7 @@
 
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="./pages/widgets/widgets.php" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Widgets
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
-
+               
 
                 <li class="nav-item has-treeview">
                     <a href="./pages/user-master/user.php" class="nav-link">
@@ -128,7 +119,7 @@
                     <a href="./pages/Gallery/home.php" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
-                            Member 
+                            Member
 
                             <i class="fas fa-angle-left right"></i>
 
@@ -137,15 +128,50 @@
 
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./pages/Gallery/categoriesData.php" class="nav-link">
+                            <a href="./pages/keypepole/pepole.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
+                                    People
                                 </p>
                             </a>
                         </li>
 
                     </ul>
 
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="../contact/contact.php" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            About us 
+                            <i class="fas fa-angle-left right"></i>
+                            <span class="badge badge-info right">6</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/about/about.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>About Company</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/about/about-director.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>About Director</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="./pages/about-mission-vission.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>Mission-Vission</p>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="../contact/contact.php" class="nav-link">
@@ -188,105 +214,7 @@
 
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="./pages/Gallery/home.php" class="nav-link">
-                        <i class="fas fa-bullhorn"> </i>
-                        <p>
-                            &nbsp; Seller
-
-                            <i class="fas fa-angle-left right"></i>
-
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./pages/Gallery/home.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Seller ID</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./pages/Gallery/allcategories.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Seller product
-                                </p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
-                        <p>
-                            Charts
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/charts/chartjs.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>ChartJS</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/flot.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Flot</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/inline.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inline</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>
-                            Forms
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/forms/general.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>General Elements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/advanced.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Advanced Elements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/editors.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Editors</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/validation.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Validation</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-
-
-
+               
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -27,10 +27,10 @@
     <!-- Right navbar links -->
 
     <ul class="navbar-nav ml-auto">
-    <li class="nav-item ">
-    
-            <a class="nav-link"  href="../../AdminLogin/Logout.php">
-            <i class="fa fa-power-off"></i>
+        <li class="nav-item ">
+
+            <a class="nav-link" href="../../AdminLogin/Logout.php">
+                <i class="fa fa-power-off"></i>
             </a>
         </li>
         <!-- Messages Dropdown Menu -->

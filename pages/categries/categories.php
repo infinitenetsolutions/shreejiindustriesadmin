@@ -85,61 +85,68 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                 include 'insert.php';
                 // include 'update.php';
                 ?>
-             
+
                 <div class="card-body">
-                <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
-                </a>
-                <div class="table-responsive ">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
+                  </a>
+                  <div class="table-responsive ">
+                    <table id="example1" class="table table-bordered table-striped">
 
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Action1</th>
-                        <th>Action2</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
+                      <thead>
+                        <tr>
+                          <th>S.NO</th>
+                          <th>Name</th>
+                          <th>Images</th>
+                          <th>Action1</th>
+                          <th>Action2</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
 
-                    <tbody>
+                      <tbody>
 
-                      <?php
+                        <?php
+$i=1;
+                        if (mysqli_num_rows($result1) > 0) {
+                          while ($rows = mysqli_fetch_array($result1)) {
 
-                      if (mysqli_num_rows($result1) > 0) {
-                        while ($rows = mysqli_fetch_array($result1)) {
+                        ?>
+                            <tr>
+                              <td><?php echo $i ?></td>
+                              <td><?php echo $rows['c_name']; ?></td>
+                              <td>
+                                <a <?php echo ' href="data:image/jpeg;base64,' . base64_encode($rows['images']) . '"' ?> data-toggle="lightbox" data-title="Slider Images">
+                                  <img height="40px" width="40px" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($rows['images']) . '"' ?> class="img-fluid mb-2" alt="Slider Images" />
+                                </a>
+                              </td>
+                              <td><a href="update.php?edit=<?php echo $rows['c_id']; ?>" class="btn btn-warning">Update</a></td>
+                              <td> <a href="delete.php?delete=<?php echo $rows['c_id']; ?>" class="btn btn-danger">Delete</a>
+                              <td> <?php
+                                    if ($rows['c_status'] == 1) {
+                                      echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['c_id'] . "'>Active</a>";
+                                    } else {
+                                      echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['c_id'] . "'>Deactive</a>";
+                                    }
 
-                      ?>
-                          <tr>
-                            <td><?php echo $rows['c_id']; ?></td>
-                            <td><?php echo $rows['c_name']; ?></td>
-                            <td><a href="update.php?edit=<?php echo $rows['c_id']; ?>" class="btn btn-warning">Update</a></td>
-                            <td> <a href="delete.php?delete=<?php echo $rows['c_id']; ?>" class="btn btn-danger">Delete</a>
-                            <td> <?php
-                                  if ($rows['c_status'] == 1) {
-                                    echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['c_id'] . "'>Active</a>";
-                                  } else {
-                                    echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['c_id'] . "'>Deactive</a>";
-                                  }
+                                    ?>
+                              </td>
 
-                                  ?>
-                            </td>
-
-                          </tr>
-                      <?php }
-                      } ?>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Action1</th>
-                        <th>Action2</th>
-                        <th>Status</th>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
+                            </tr>
+                        <?php $i++; }
+                        } ?>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>S.NO</th>
+                          <th>Name</th>
+                          <th>Images</th>
+                          <th>Action1</th>
+                          <th>Action2</th>
+                          <th>Status</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                 </div>
                 <!-- /.card-body -->
               </div>
