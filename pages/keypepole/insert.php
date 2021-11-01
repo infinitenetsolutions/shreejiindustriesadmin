@@ -13,6 +13,7 @@ if (isset($_POST['add'])) {
     $priority = $_POST['priority'];
     $categries = $_POST['Categries'];
     $description = $_POST['description'];
+    $imgData = addslashes(file_get_contents($_FILES['image']['tmp_name']));
     echo  "<br>";
 
     $status = $_POST['status'];
@@ -20,24 +21,14 @@ if (isset($_POST['add'])) {
     if ($name != null) {
 
 
-        $insert = "INSERT INTO `keypepole`(`name`, `email`, `phone`, `address`, `Categries`, `post`, `description`, `image`, `priority`, `status`)  VALUES ('$name','$email','$phone','$address','$categries','$post','$description','NULL','$priority','$status')";
+        $insert = "INSERT INTO `keypepole`(`name`, `email`, `phone`, `address`, `Categries`, `post`, `description`, `image`, `priority`, `status`)  VALUES ('$name','$email','$phone','$address','$categries','$post','$description','$imgData','$priority','$status')";
         $result = mysqli_query($connection, $insert);
         if ($result > 0) {
-            if (count($_FILES) > 0) {
-                if (is_uploaded_file($_FILES['image']['tmp_name'])) {
+          
 
-                    $imgData = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-                    $sql = "UPDATE keypepole set image='$imgData' WHERE `email`='$email' ";
-                    $current_id = mysqli_query($connection, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($connection));
-                    if (isset($current_id)) {
-                        echo '<script>
+            echo '<script>
                         window.location.replace("pepole.php")
                         </script>';
-                    }
-                }
-            }
-
-            echo "<p class='success'>Event Added successfully Refresh the page</p>";
         } else {
             echo "<p class='col'>data already exits</p>";
         }
