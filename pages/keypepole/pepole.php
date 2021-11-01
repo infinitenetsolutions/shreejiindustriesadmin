@@ -92,7 +92,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                       <thead>
                         <tr>
-                          <th>ID</th>
+                          <th>S.NO</th>
                           <th>Name</th>
                           <th>Address</th>
                           <th>post</th>
@@ -109,13 +109,13 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       <tbody>
 
                         <?php
-
+$i=1;
                         if (mysqli_num_rows($result1) > 0) {
                           while ($rows = mysqli_fetch_array($result1)) {
 
                         ?>
                             <tr>
-                              <td><?php echo $rows['id']; ?></td>
+                              <td><?php echo $i; ?></td>
                               <td><?php echo $rows['name']; ?></td>
                               <td><?php echo $rows['address']; ?></td>
                               <td><?php echo $rows['post']; ?></td>
@@ -136,7 +136,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                               </td>
 
                             </tr>
-                        <?php }
+                        <?php $i++; }
                         } ?>
                       </tbody>
                       <tfoot>

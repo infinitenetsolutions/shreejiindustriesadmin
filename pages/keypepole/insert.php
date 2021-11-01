@@ -42,17 +42,6 @@ if (isset($_POST['add'])) {
             echo "<p class='col'>data already exits</p>";
         }
     }
-
-
-
-
-
-    // } else {
-    //     $msg = "Enter status in 1 (Active) & 0 (DeActtive)";
-    // }
-
-    //Api to retriving data
-
 }
 $categrie = "SELECT * FROM `categories`";
 $cat_r = mysqli_query($connection, $categrie);
@@ -79,15 +68,7 @@ $cat_r = mysqli_query($connection, $categrie);
                                 <input name="name" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Caregorie Name">
 
                             </div>
-                            <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">Event Categories</label>
-                                <select name="Categries" id="defaultForm-email" class="form-control validate" placeholder="Enter Caregorie Name">
-                                    <option selected disabled>categories choose..</option>
-                                    <?php while ($cat_row = mysqli_fetch_array($cat_r)) { ?>
-                                        <option value=" <?php echo $cat_row['name']; ?>"><?php echo $cat_row['name']; ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
+
 
                             <div class="md-form col-sm-4">
                                 <label data-error="wrong" data-success="right" for="defaultForm-email">email</label>
@@ -114,7 +95,7 @@ $cat_r = mysqli_query($connection, $categrie);
                                 <input name="image" type="file" id="defaultForm-email" accept="image/*" class="form-control validate" placeholder="Enter Caregorie Name">
 
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-sm-4 ">
                                 <label for="exampleFormControlSelect1">Select priority</label>
                                 <select name="priority" class="form-control" id="exampleFormControlSelect1">
 
@@ -125,7 +106,7 @@ $cat_r = mysqli_query($connection, $categrie);
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group col-sm-4">
                                 <label for="exampleFormControlSelect1">Select Status</label>
                                 <select name="status" class="form-control" id="exampleFormControlSelect1">
 
