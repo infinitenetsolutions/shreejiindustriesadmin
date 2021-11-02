@@ -70,7 +70,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                       <thead>
                         <tr>
-                          <th>ID</th>
+                          <th>S.NO</th>
                           <th>Name</th>
                           <th>MRP</th>
                           <th>PRICE</th>
@@ -86,13 +86,13 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       <tbody>
 
                         <?php
-
+$i=1;
                         if (mysqli_num_rows($result) > 0) {
                           while ($rows = mysqli_fetch_array($result)) {
 
                         ?>
                             <tr>
-                              <td><?php echo $rows['p_id']; ?></td>
+                              <td><?php echo $i; ?></td>
                               <td><?php echo $rows['p_name']; ?></td>
                               <td><?php echo $rows['p_mrp']; ?></td>
                               <td><?php echo $rows['p_s_price']; ?></td>
@@ -111,12 +111,12 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                               </td>
                               <td> <a href="delete.php?delete=<?php echo $rows['p_id']; ?>" class="btn btn-danger">Delete</a> </td>
                             </tr>
-                        <?php }
+                        <?php $i++; }
                         } ?>
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th>ID</th>
+                          <th>S.NO</th>
                           <th>Name</th>
                           <th>MRP</th>
                           <th>PRICE</th>

@@ -2,7 +2,7 @@
 include '../../connection.inc.php';
 
 if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
-  $select = "SELECT * FROM `user-history` WHERE 1";
+  $select = "SELECT * FROM `user_order_history` WHERE 1";
   $result = mysqli_query($connection, $select);
 } else {
   header('location:./AdminLogin/super_Admin.php');
@@ -80,54 +80,68 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                   <h3 class="card-title">All Categries of The Product</h3>
                 </div>
                 <!-- /.card-header -->
-            
+
                 <div class="card-body">
+                  <div class="table-responsive">
+                    <table id="example1" class="table table-bordered table-striped">
 
-                  <table id="example1" class="table table-bordered table-striped">
-
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>P_Name</th>
-                        <th>Price</th>
-                        <th>Order_Id</th>
-                        <th>Payment mode</th>
-                        <th>Address</th>
-                        <th>Seller</th>
-                        <th>Date/Time</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                      if (mysqli_num_rows($result) > 0) {
-                        while ($rows = mysqli_fetch_array($result)){
-                      ?>
-                          <tr>
-                            <td><?php echo $rows['p_id']; ?></td>
-                            <td><?php echo $rows['p_name']; ?></td>
-                            <td><?php echo $rows['p_price']; ?></td>
-                            <td><?php echo $rows['p_order_id']; ?></td>
-                            <td><?php echo $rows['p_payment_mode']; ?></td>
-                            <td><?php echo $rows['p_address']; ?></td>
-                            <td><?php echo $rows['p_seller']; ?></td>
-                            <td><?php echo $rows['p_date']; ?></td>
-                          </tr>
-                      <?php }
-                      } ?>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>ID</th>
-                        <th>P_Name</th>
-                        <th>Price</th>
-                        <th>Order_Id</th>
-                        <th>Payment mode</th>
-                        <th>Address</th>
-                        <th>Seller</th>
-                        <th>Date/Time</th>
-                      </tr>
-                    </tfoot>
-                  </table>
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>P_Name</th>
+                          <th>No of Item</th>
+                          <th>Amount</th>
+                          <th>Name</th>
+                          <th>Phone NO</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>Pincode</th>
+                          <th>Address</th>
+                          <th>Date/Time</th>
+                          <th>Product Details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        $i = 1;
+                        if (mysqli_num_rows($result) > 0) {
+                          while ($rows = mysqli_fetch_array($result)) {
+                        ?>
+                            <tr>
+                              <td><?php echo $i; ?></td>
+                              <td><?php echo $rows['h_product_name']; ?></td>
+                              <td><?php echo $rows['h_discount']; ?></td>
+                              <td><?php echo $rows['h_p_price']; ?></td>
+                              <td><?php echo $rows['name']; ?></td>
+                              <td><?php echo $rows['phone']; ?></td>
+                              <td><?php echo $rows['city']; ?></td>
+                              <td><?php echo $rows['state']; ?></td>
+                              <td><?php echo $rows['pincode']; ?></td>
+                              <td><?php echo $rows['h_address']; ?></td>
+                              <td><?php echo $rows['h_date']; ?></td>
+                              <td><a href="../product/details.php?read=<?php echo $rows['h_product_id'] ?>" class="btn btn-success">Go</a></td>
+                            </tr>
+                        <?php $i++;
+                          }
+                        } ?>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>P_Name</th>
+                          <th>No of Item</th>
+                          <th>Amount</th>
+                          <th>Name</th>
+                          <th>Phone NO</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>Pincode</th>
+                          <th>Address</th>
+                          <th>Date/Time</th>
+                          <th>Product Details</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                 </div>
                 <!-- /.card-body -->
               </div>

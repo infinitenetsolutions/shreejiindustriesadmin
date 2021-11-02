@@ -25,7 +25,11 @@ if (isset($_GET['read']) && ($_GET['read'] != '')) {
         $p_result = mysqli_query($connection, $product_rationg);
         $cusreview = mysqli_num_rows($p_result);
 
-
+        $img_qury1="SELECT * FROM `product_images` WHERE `product_img_id`='$id'";
+        $result_img1=mysqli_query($connection,$img_qury1);
+        $img_qury="SELECT * FROM `product_images` WHERE `product_img_id`='$id'";
+        $result_img=mysqli_query($connection,$img_qury);
+        $img_row_data=mysqli_fetch_array($result_img);
 
 ?>
 
@@ -98,14 +102,13 @@ if (isset($_GET['read']) && ($_GET['read'] != '')) {
                                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                                 <div class="carousel-inner">
                                                     <div class="carousel-item active">
-                                                        <img class="d-block img-hw" src="photo-1523275335684-37898b6baf30.jpeg" alt="Second slide">
+                                                        <img class="d-block img-hw" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($img_row_data['images']) . '"' ?> alt="Second slide">
                                                     </div>
-                                                    <div class="carousel-item">
-                                                        <img class="d-block img-hw" src="photo-1523275335684-37898b6baf30.jpeg" alt="Second slide">
+                                                    <?php while($row_img1=mysqli_fetch_array($result_img1)){ ?>
+                                                    <div class="carousel-item ">
+                                                        <img class="d-block img-hw" <?php echo ' src="data:image/jpeg;base64,' . base64_encode($row_img1['images']) . '"' ?> alt="Second slide">
                                                     </div>
-                                                    <div class="carousel-item">
-                                                        <img class="d-block img-hw" src="photo-1523275335684-37898b6baf30.jpeg" alt="Second slide">
-                                                    </div>
+                                                  <?php } ?>
                                                 </div>
                                                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
