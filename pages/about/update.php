@@ -22,6 +22,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
         $link = $row['youtube'];
         $description = $row['description'];
         $status = $row['status'];
+        $url=$_SERVER['HTTP_REFERER'];
 
 ?>
 
@@ -156,13 +157,18 @@ if (isset($_POST['Submit'])) {
 
             echo "<script>
             setTimeout(function() {
-                window.location.replace('about.php');
+                window.location.replace('$url');
 
               }, 1000);
 
         </script>";
         } else {
-            echo "<p class='col'>data already exits</p>";
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Alert</strong> Data already Exits
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>';
         }
     } else {
         $msg = "Enter status in 1 (Active) & 0 (DeActive)";
