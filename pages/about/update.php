@@ -24,7 +24,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
         $status = $row['status'];
         $url='';
 
-         echo    $url = $_SESSION['url'];
+            $url = $_SESSION['url'];
 
 
 ?>
@@ -135,7 +135,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 if (isset($_POST['Submit'])) {
     $title = simplename($_POST['name']);
     $link = $_POST['link'];
-   echo $url =$url;
+
 
     $description = $_POST['msg'];
     $status = $_POST['status'];
