@@ -6,6 +6,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
   $result1 = mysqli_query($connection, $select);
 
 
+  $_SESSION['url']=$_SERVER['HTTP_REFERER'];
 
 
 ?>

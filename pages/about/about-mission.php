@@ -2,10 +2,11 @@
 include '../../connection.inc.php';
 
 if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
-  $select = "SELECT * FROM `about_us` WHERE `type`='director'";
+  $select = "SELECT * FROM `about_us` WHERE `type`='mission'";
   $result1 = mysqli_query($connection, $select);
 
-$_SESSION['url']=$_SERVER['HTTP_REFERER'];
+
+  $_SESSION['url']=$_SERVER['HTTP_REFERER'];
 
 
 ?>

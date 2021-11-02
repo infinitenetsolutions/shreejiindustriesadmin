@@ -195,8 +195,16 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../about/about-mission-vission.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
-                                <p>Mission-Vission</p>
+                            <a href="../about/about-mission.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>Mission</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="../about/about-vission.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                                <p>Vission</p>
                             </a>
                         </li>
 

@@ -22,7 +22,10 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
         $link = $row['youtube'];
         $description = $row['description'];
         $status = $row['status'];
-        $url=$_SERVER['HTTP_REFERER'];
+        $url='';
+
+         echo    $url = $_SESSION['url'];
+
 
 ?>
 
@@ -63,8 +66,8 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 
                             <form method="post" enctype="multipart/form-data">
                                 <div class="row">
-                   
-                   
+
+
                                     <div class="mb-3 col-sm-6">
 
 
@@ -110,13 +113,13 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                             </form>
 
                         </div>
-                        
+
                     </section>
                 </div>
-        
-                  
-                    <?php include '../navfootersider/foot.php'; ?>
-                    <?php include '../navfootersider/footer.php'; ?>
+
+
+                <?php include '../navfootersider/foot.php'; ?>
+                <?php include '../navfootersider/footer.php'; ?>
         </body>
         <script src="../../ckeditor/ckeditor.js"></script>
 
@@ -131,18 +134,19 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 }
 if (isset($_POST['Submit'])) {
     $title = simplename($_POST['name']);
-    $link=$_POST['link'];
+    $link = $_POST['link'];
+   echo $url =$url;
 
-    $description=$_POST['msg'];
+    $description = $_POST['msg'];
     $status = $_POST['status'];
-// updating only image
-    if(!empty($_FILES['image']['tmp_name'])){
-        $image=addslashes(file_get_contents($_FILES['image']['tmp_name']));
+    // updating only image
+    if (!empty($_FILES['image']['tmp_name'])) {
+        $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
         $update = "UPDATE `about_us` SET `images`='$image' WHERE  id=$id";
-            $result = mysqli_query($connection, $update);
-        }
+        $result = mysqli_query($connection, $update);
+    }
 
-        // updating all data except image
+    // updating all data except image
     if ($status == 1 || $status == 0) {
 
         $update = "UPDATE `about_us` SET `title`='$title',`description`='$description',`youtube`='$link',`status`='$status' WHERE  id=$id";
@@ -154,14 +158,14 @@ if (isset($_POST['Submit'])) {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>';
+            echo $url;
+                echo "<script>
+                setTimeout(function() {
+                   window.location.replace('$url');
 
-            echo "<script>
-            setTimeout(function() {
-                window.location.replace('$url');
+               }, 1000);
 
-              }, 1000);
-
-        </script>";
+             </script>";
         } else {
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Alert</strong> Data already Exits
