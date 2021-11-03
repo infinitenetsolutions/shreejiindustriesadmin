@@ -355,7 +355,7 @@ $result2 = mysqli_query($connection, $select1);
                     </div>
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button name="add" class="btn btn-default">Add Images</button>
+                    <button name="add" class="btn btn-default">Add Product</button>
                 </div>
             </form>
         </div>
