@@ -72,11 +72,19 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         <tr>
                           <th>S.NO</th>
                           <th>Name</th>
-                          <th>MRP</th>
-                          <th>PRICE</th>
-                          <th>Quantity</th>
-                          <th>color</th>
-                          <th>Details</th>
+                          <th>code</th>
+                          <th>model_no</th>
+                          <th>make</th>
+                          <th>grade</th>
+                          <th>materialtype</th>
+                          <th>size</th>
+                          <th>con_width</th>
+                          <th>thickness	</th>
+                          <th>cylinder_size</th>
+                          <th>heating</th>
+                          <th>pack_type	</th>
+                          <th>pack_accuracy</th>
+                          <th>details</th>
                           <th>Status</th>
                           <th>Action</th>
 
@@ -86,7 +94,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       <tbody>
 
                         <?php
-$i=1;
+                        $i = 1;
                         if (mysqli_num_rows($result) > 0) {
                           while ($rows = mysqli_fetch_array($result)) {
 
@@ -94,11 +102,21 @@ $i=1;
                             <tr>
                               <td><?php echo $i; ?></td>
                               <td><?php echo $rows['p_name']; ?></td>
-                              <td><?php echo $rows['p_mrp']; ?></td>
-                              <td><?php echo $rows['p_s_price']; ?></td>
-                              <td><?php echo $rows['p_quantity']; ?></td>
+                              <td><?php echo $rows['p_code']; ?></td>
+                              <td><?php echo $rows['model_no']; ?></td>
+                              <td><?php echo $rows['make']; ?></td>
+                     
+                              <td><?php echo $rows['grade']; ?></td>
+                              <td><?php echo $rows['materialtype']; ?></td>
+                              <td><?php echo $rows['size']; ?></td>
+                              <td><?php echo $rows['con_width']; ?></td>
 
-                              <td><?php echo $rows['p_color']; ?></td>
+                              <td><?php echo $rows['thickness']; ?></td>
+                              <td><?php echo $rows['cylinder_size']; ?></td>
+                              <td><?php echo $rows['pressure']; ?></td>
+                              <td><?php echo $rows['heating']; ?></td>
+
+                              <td><?php echo $rows['pack_type']; ?></td>
                               <td> <a href="details.php?read=<?php echo $rows['p_id']; ?>" class="text-success">More..</a>
                               <td> <?php
                                     if ($rows['p_status'] == 1) {
@@ -111,21 +129,29 @@ $i=1;
                               </td>
                               <td> <a href="delete.php?delete=<?php echo $rows['p_id']; ?>" class="btn btn-danger">Delete</a> </td>
                             </tr>
-                        <?php $i++; }
+                        <?php $i++;
+                          }
                         } ?>
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th>S.NO</th>
+                        <th>S.NO</th>
                           <th>Name</th>
-                          <th>MRP</th>
-                          <th>PRICE</th>
-                          <th>Quantity</th>
-                          <th>color</th>
-                          <th>Details</th>
+                          <th>code</th>
+                          <th>model_no</th>
+                          <th>make</th>
+                          <th>grade</th>
+                          <th>materialtype</th>
+                          <th>size</th>
+                          <th>con_width</th>
+                          <th>thickness	</th>
+                          <th>cylinder_size</th>
+                          <th>heating</th>
+                          <th>pack_type	</th>
+                          <th>pack_accuracy</th>
+                          <th>details</th>
                           <th>Status</th>
                           <th>Action</th>
-
                         </tr>
                       </tfoot>
                     </table>
