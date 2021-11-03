@@ -127,74 +127,74 @@ $result2 = mysqli_query($connection, $select1);
 
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Name</sub>
-                                <input required name="name" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Product Name">
+                                <input required name="name" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
 
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Product code</sub>
-                                <input required name="p_code" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_code" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Model no</sub>
-                                <input required name="p_model_no" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_model_no" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Paper Dona Size</sub>
-                                <input required name="p_dona_size" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_dona_size" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Thickness</sub>
-                                <input required name="p_thickness" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_thickness" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Production Rate</sub>
-                                <input required name="p_rate" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_rate" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Power Source</sub>
-                                <input required name="p_source" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_source" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Electric Motor</sub>
-                                <input required name="p_electric_motor" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_electric_motor" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Motor Make</sub>
-                                <input required name="p_motor_make" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_motor_make" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Weight of Machine</sub>
-                                <input required name="p_weight" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_weight" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Power Consumption</sub>
-                                <input required name="p_power_consumption" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_power_consumption" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Space Required</sub>
-                                <input required name="p_space_required" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_space_required" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
@@ -204,7 +204,7 @@ $result2 = mysqli_query($connection, $select1);
 
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1">Man Power</sub>
-                                <input required name="p_man_power" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_man_power" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
@@ -214,7 +214,7 @@ $result2 = mysqli_query($connection, $select1);
 
                             <div class="form-group col-sm-4">
                                 <sub class="a-color" for="exampleFormControlSelect1"> Accessories </sub>
-                                <input required name="p_accessories" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Value">
+                                <input required name="p_accessories" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter product Name">
 
 
                             </div>
