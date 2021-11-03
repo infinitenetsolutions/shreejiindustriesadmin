@@ -2,8 +2,8 @@
 include '../../connection.inc.php';
 
 if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
-  $select = "SELECT * FROM `enquiry` WHERE 1";
-  $result = mysqli_query($connection, $select);
+  $select = "SELECT * FROM `faq`";
+  $result1 = mysqli_query($connection, $select);
 } else {
   header('location:./AdminLogin/super_Admin.php');
 }
@@ -80,20 +80,26 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                   <h3 class="card-title">All Categries of The Product</h3>
                 </div>
                 <!-- /.card-header -->
+                <?php
+
+                include 'insert.php';
+                // include 'update.php';
+                ?>
 
                 <div class="card-body">
+                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
+                  </a>
                   <div class="table-responsive ">
                     <table id="example1" class="table table-bordered table-striped">
 
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Mobile</th>
-                          <th>Date/Time</th>
-                          <th>Query</th>
+                          <th>S.NO</th>
+                          <th>Question</th>
+                          <th>Answare</th>
                           <th>Action1</th>
+                          <th>Action2</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
 
@@ -101,44 +107,32 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                         <?php
                         $i = 1;
-                        if (mysqli_num_rows($result) > 0) {
-                          while ($rows = mysqli_fetch_array($result)) {
+                        if (mysqli_num_rows($result1) > 0) {
+                          while ($rows = mysqli_fetch_array($result1)) {
 
                         ?>
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal<?php echo $rows['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Candidate Massages </h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <?php echo $rows['massage']; ?>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- massage end -->
                             <tr>
-                              <td><?php echo $i; ?></td>
-                              <td><?php echo $rows['name']; ?></td>
-                              <var>
-                                <td><?php echo $rows['email']; ?></td>
-                                <td><?php echo $rows['phone']; ?></td>
-                                <td><?php echo $rows['date']; ?></td>
-                                <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal<?php echo $rows['id']; ?>">
-                                    Read more
-                                  </button></td>
+                              <td><?php echo $i ?></td>
+                              <td><?php echo $rows['quation']; ?></td>
+                              
+                              <td>
 
-                                <td> <a href="delete.php?delete=<?php echo $rows['id']; ?>" class="btn btn-danger">Delete</a>
+                              <?php echo $rows['answare']; ?>
+                                <!-- <a <?php // echo ' href="data:image/jpeg;base64,' . base64_encode($rows['images']) . '"' ?> data-toggle="lightbox" data-title="Slider Images">
+                                  <img height="40px" width="40px" <?php // echo ' src="data:image/jpeg;base64,' . base64_encode($rows['images']) . '"' ?> class="img-fluid mb-2" alt="Slider Images" />
+                                </a> -->
+                              </td>
+                              <td><a href="update.php?edit=<?php echo $rows['id']; ?>" class="btn btn-warning">Update</a></td>
+                              <td> <a href="delete.php?delete=<?php echo $rows['id']; ?>" class="btn btn-danger">Delete</a>
+                              <td> <?php
+                                    if ($rows['status'] == 1) {
+                                      echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['id'] . "'>Active</a>";
+                                    } else {
+                                      echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['id'] . "'>Deactive</a>";
+                                    }
 
+                                    ?>
+                              </td>
 
                             </tr>
                         <?php $i++;
@@ -146,16 +140,13 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         } ?>
                       </tbody>
                       <tfoot>
-                        <tr>
-                        <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Mobile</th>
-                          <th>Date</th>
-                          <th>Query</th>
+                      <tr>
+                          <th>S.NO</th>
+                          <th>Question</th>
+                          <th>Answare</th>
                           <th>Action1</th>
-                        </tr>
+                          <th>Action2</th>
+                          <th>Status</th>
                         </tr>
                       </tfoot>
                     </table>

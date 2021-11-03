@@ -97,16 +97,16 @@
                     <a href="./pages/user-master/user.php" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
-                            User-Master
+                            Order
 
                         </p>
                         <i class="right fas fa-angle-left"></i>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./pages/user-master/user.php" class="nav-link">
+                            <a href="./pages/user-master/user-history.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Users</p>
+                                <p>All Orders</p>
                             </a>
                         </li>
 
@@ -212,7 +212,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="./pages/ourclients/" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>Our Clients</p>
                             </a>
                         </li>
@@ -220,7 +220,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="./pages/faq/" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>Faq</p>
                             </a>
                         </li>
@@ -228,7 +228,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="./pages/contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>Contact us</p>
                             </a>
                         </li>

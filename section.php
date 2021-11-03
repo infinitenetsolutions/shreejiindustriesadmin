@@ -30,7 +30,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="./pages/user-master/user-history.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -60,7 +60,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="./pages/user-master/user.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="./pages/product/product.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -68,14 +68,14 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3><?php echo mysqli_num_rows($uniquevisiter); ?></h3>
+                            <h3><?php  echo mysqli_num_rows($totalorder); ?></h3>
 
                             <p>Unique Visitors</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="./pages/product/product.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

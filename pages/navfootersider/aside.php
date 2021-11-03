@@ -2,12 +2,12 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../../index.php" class="brand-link">
-        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image" >
+        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image">
         <span class="brand-text font-weight-light">&nbsp;</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
-   
+
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -24,10 +24,10 @@
                     </a>
 
                 </li>
-                
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-list-alt"></i>
+                        <i class="nav-icon fas fa-id-card-alt"> </i>
                         <p>
                             Enquiry
                             <i class="fas fa-angle-left right"></i>
@@ -41,7 +41,7 @@
                                 <p>Enquiry</p>
                             </a>
                         </li>
-                     
+
 
                     </ul>
                 </li>
@@ -61,13 +61,6 @@
                                 <p>Categories</p>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="../subcategries/categories.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>SubCategories
-                                </p>
-                            </a>
-                        </li> -->
 
                     </ul>
                 </li>
@@ -90,32 +83,24 @@
 
                     </ul>
                 </li>
-             
-             
+
+
 
                 <li class="nav-item has-treeview">
                     <a href="../user-master/user.php" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
+                        <i class=" nav-icon fas fa-sort-amount-up-alt"></i>
                         <p>
-                            User-Master
+                            Orders
 
                         </p>
                         <i class="right fas fa-angle-left"></i>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="../user-master/user.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Users</p>
-                            </a>
-                        </li>
 
-                    </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="../user-master/user-history.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>User history</p>
+                                <p>All Orders</p>
                             </a>
                         </li>
 
@@ -132,7 +117,7 @@
 
                         </p>
                     </a>
-               
+
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="../Gallery/categoriesData.php" class="nav-link">
@@ -146,7 +131,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="./pages/Gallery/home.php" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                       <i class="nav-icon fas fa-user-alt"></i>
                         <p>
                             Member
 
@@ -170,9 +155,9 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="../contact/contact.php" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                    <i class=" nav-icon fas fa-eject"></i>
                         <p>
-                            About us 
+                            About us
                             <i class="fas fa-angle-left right"></i>
                             <span class="badge badge-info right">6</span>
                         </p>
@@ -212,16 +197,16 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="../contact/contact.php" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                    <i class="nav-icon fas fa-building"></i>
                         <p>
-                            Shreeji Industries  
+                            Shreeji Industries
                             <i class="fas fa-angle-left right"></i>
                             <span class="badge badge-info right">6</span>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="../ourclients/" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>Our Clients</p>
                             </a>
                         </li>
@@ -229,7 +214,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../contact/contact.php" class="nav-link"> <i class="far fa-circle nav-icon"></i>
+                            <a href="../faq/" class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>Faq</p>
                             </a>
                         </li>
@@ -251,7 +236,7 @@
 
                     </ul>
                 </li>
-               
+
 
             </ul>
         </nav>

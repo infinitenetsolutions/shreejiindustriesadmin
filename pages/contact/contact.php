@@ -104,14 +104,37 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       if (mysqli_num_rows($result) > 0) {
                         while ($rows = mysqli_fetch_array($result)) {
 
-                      ?>
+                      ?> <!-- Modal -->
+                      <div class="modal fade" id="exampleModal<?php echo $rows['con_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Candidate Massages </h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <?php echo $rows['con_query']; ?>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- massage end -->
                           <tr>
                             <td><?php echo $rows['con_id']; ?></td>
                             <td><?php echo $rows['con_name']; ?></td>
                             <var> <td><?php echo $rows['con_email']; ?></td>
                             <td><?php echo $rows['con_mobile']; ?></td>
                             <td><?php echo $rows['con_date']; ?></td>
-                            <td> <a href="read-mail.php?read=<?php echo $rows['con_id'];?>" class="success">Read..</a>
+                            <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal<?php echo $rows['con_id']; ?>">
+                                    Read more
+                                  </button></td>
+
 
                             <td> <a href="delete.php?delete=<?php echo $rows['con_id']; ?>" class="btn btn-danger">Delete</a>
                           
