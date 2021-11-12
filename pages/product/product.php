@@ -87,7 +87,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>details</th>
                           <th>Status</th>
                           <th>Action</th>
-
+                          <th>Action</th>
                         </tr>
                       </thead>
 
@@ -118,7 +118,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                               <td><?php echo $rows['pack_type']; ?></td>
                               <td> <a href="details.php?read=<?php echo $rows['p_id']; ?>" class="text-success">More..</a>
-                              <td> <?php
+
+                             <td> <?php
                                     if ($rows['p_status'] == 1) {
                                       echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['p_id'] . "'>Active</a>";
                                     } else {
@@ -127,6 +128,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                                     ?>
                               </td>
+                              <td><a href="update.php?edit=<?php echo $rows['p_id']; ?>" class="btn btn-warning">Update</a></td>
+
                               <td> <a href="delete.php?delete=<?php echo $rows['p_id']; ?>" class="btn btn-danger">Delete</a> </td>
                             </tr>
                         <?php $i++;
@@ -151,6 +154,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>pack_accuracy</th>
                           <th>details</th>
                           <th>Status</th>
+                          <th>Action</th>
                           <th>Action</th>
                         </tr>
                       </tfoot>

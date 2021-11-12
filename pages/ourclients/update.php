@@ -117,7 +117,7 @@ if (isset($_POST['Submit'])) {
         $result = mysqli_query($connection, $update);
         if ($result > 0) {
             echo "<script>
-          window.location.replace('" . $url . "')
+          window.location.replace('index.php')
       </script>";
         } else {
             echo "<p class='col'>data already exits</p>";
