@@ -73,9 +73,10 @@ if (isset($_POST['add'])) {
             $get_p_result = mysqli_query($connection, $get_product_id);
             $data = mysqli_fetch_array($get_p_result);
             $pro_id = $data['id'];
+           
             echo "<script>
             setTimeout(function() {
-                window.location.replace('uploadimages.php?pro=$pro_id');
+                window.location.replace('updateimages.php?pro=$pro_id');
 
               }, 1000);
 

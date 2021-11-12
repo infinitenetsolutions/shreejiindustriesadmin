@@ -10,14 +10,7 @@ include '../../connection.inc.php';
 if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
     $id = $_GET['edit'];
 
-    $select_single_data = "SELECT * FROM `our_clients` WHERE id=$id";
-    $result = mysqli_query($connection, $select_single_data);
-    if (mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_array($result);
-        $id = $row['id'];
-        $name = $row['name'];
-        $images = $row['images'];
-        $status = $row['status'];
+  
 
 
         $select1 = "SELECT * FROM `categories`";
@@ -135,8 +128,7 @@ if(!empty($_FILES['BROCHURE']['tmp_name'])){
       
           echo "<script>
           setTimeout(function() {
-              window.location.replace('product.php');
-
+            window.location.replace('updateimages.php?pro=$id');
             }, 1000);
 
       </script>";
@@ -487,14 +479,8 @@ if(!empty($_FILES['BROCHURE']['tmp_name'])){
 </html>
 <?php
 
-    } else {
-        header('location: ../../pages/categries/categories.php');
-    }
+  
 } else {
     header('location: ../../pages/categries/categories.php');
 }
-$url = $_SERVER['HTTP_REFERER'];
-
- 
-
 ?>
