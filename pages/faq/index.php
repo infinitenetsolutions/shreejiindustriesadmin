@@ -17,7 +17,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>Shreeji Industries</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -60,7 +60,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Categries</li>
+                <li class="breadcrumb-item active">Faq</li>
               </ol>
             </div>
           </div>
@@ -77,7 +77,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">All Categries of The Product</h3>
+                  <h3 class="card-title">All Faq</h3>
                 </div>
                 <!-- /.card-header -->
                 <?php
@@ -87,7 +87,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                 ?>
 
                 <div class="card-body">
-                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
+                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new Faq
                   </a>
                   <div class="table-responsive ">
                     <table id="example1" class="table table-bordered table-striped">

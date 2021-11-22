@@ -60,19 +60,19 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                         <div class="mb-3 col-sm-4">
 
 
-                                            <label for="exampleInputEmail1" class="form-label">Categorie Name</label>
+                                            <label for="exampleInputEmail1" class="form-label">Client Name</label>
                                             <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                         </div>
                                         <div class="mb-3 col-sm-4">
 
 
-                                            <label for="exampleInputEmail1" class="form-label">Images</label>
+                                            <label for="exampleInputEmail1" class="form-label">Client Images</label>
                                             <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="exampleFormControlSelect1">Select Status</label>
+                                            <label for="exampleFormControlSelect1">Client Status</label>
                                             <select name="status" class="form-control" id="exampleFormControlSelect1">
 
                                                 <option value='1'>Active</option>

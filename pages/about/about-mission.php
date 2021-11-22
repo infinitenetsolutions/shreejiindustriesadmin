@@ -20,7 +20,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | DataTables</title>
+    <title>Shreeji Industries</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="./dist/img/favicon.png">
@@ -58,12 +58,12 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>About Us</h1>
+                <h1>Mission</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">About us</li>
+                  <li class="breadcrumb-item active">Mission</li>
                 </ol>
               </div>
             </div>
@@ -82,7 +82,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">About Company</h3>
+                    <h3 class="card-title">Mission</h3>
                   </div>
                   <!-- /.card-header -->
                   <?php

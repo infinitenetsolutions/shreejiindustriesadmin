@@ -38,7 +38,7 @@
                         <li class="nav-item">
                             <a href="../enquiry/" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Enquiry</p>
+                                <p>View Enquiry</p>
                             </a>
                         </li>
 
@@ -58,7 +58,7 @@
                         <li class="nav-item">
                             <a href="../categries/categories.php" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Categories</p>
+                                <p>View Categories</p>
                             </a>
                         </li>
 
@@ -68,7 +68,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fab fa-product-hunt"></i>
                         <p>
-                            Our Product
+                            Our Products
                             <i class="fas fa-angle-left right"></i>
 
                         </p>
@@ -77,7 +77,7 @@
                         <li class="nav-item">
                             <a href="../product/product.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Product</p>
+                                <p>View Products</p>
                             </a>
                         </li>
 
@@ -111,7 +111,7 @@
                     <a href="../Gallery/home.php" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
-                            Gallery
+                            Slider
 
                             <i class="fas fa-angle-left right"></i>
 

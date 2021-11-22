@@ -38,12 +38,12 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Update Data</h1>
+                                <h1>Categories</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="../../index.php">Home</a></li>
-                                    <li class="breadcrumb-item active">Update Data</li>
+                                    <li class="breadcrumb-item active">Categories</li>
                                 </ol>
                             </div>
                         </div>
@@ -59,17 +59,17 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                         <div class="mb-3 col-sm-4">
 
 
-                                            <label for="exampleInputEmail1" class="form-label">Categorie Name</label>
+                                            <label for="exampleInputEmail1" class="form-label">Category Name</label>
                                             <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                         </div>
                                         <div class="md-form col-sm-4">
-                                            <label data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</label>
+                                            <label data-error="wrong" data-success="right" for="defaultForm-email">Category Image</label>
                                             <input name="img" type="file" id="defaultForm-email" class="form-control validate" placeholder="Enter Caregorie Name">
 
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="exampleFormControlSelect1">Select Status</label>
+                                            <label for="exampleFormControlSelect1">Category Status</label>
                                             <select name="status" class="form-control" id="exampleFormControlSelect1">
 
                                                 <option value='1'>Active</option>

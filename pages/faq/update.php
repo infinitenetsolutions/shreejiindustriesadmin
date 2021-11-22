@@ -39,12 +39,12 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Update Data</h1>
+                                <h1>Faq</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="../../index.php">Home</a></li>
-                                    <li class="breadcrumb-item active">Update Data</li>
+                                    <li class="breadcrumb-item active">Faq</li>
                                 </ol>
                             </div>
                         </div>
@@ -60,12 +60,12 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                         <div class="mb-3 col-sm-4">
 
 
-                                            <label for="exampleInputEmail1" class="form-label">Question name</label>
+                                            <label for="exampleInputEmail1" class="form-label">Question</label>
                                             <input type="text" name="question" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                         </div>
                                         <div class="md-form col-sm-4">
-                                            <label data-error="wrong" data-success="right" for="defaultForm-email">Answare Name</label>
+                                            <label data-error="wrong" data-success="right" for="defaultForm-email">Answer</label>
                                             <input name="ans" type="text" value="<?php echo $ans ?>" id="defaultForm-email" class="form-control validate" placeholder="Enter Caregorie Name">
 
                                         </div>
@@ -106,8 +106,8 @@ if (isset($_POST['Submit'])) {
     $question = $_POST['question'];
     $ans = $_POST['ans'];
     $status = simplename($_POST['status']);
-    echo "<pre>";
-    print_r($_POST);
+    // echo "<pre>";
+    // print_r($_POST);
 
 
 

@@ -48,12 +48,12 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h1>Update</h1>
+                                    <h1>About</h1>
                                 </div>
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
                                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                        <li class="breadcrumb-item active">Update</li>
+                                        <li class="breadcrumb-item active">About</li>
                                     </ol>
                                 </div>
                             </div>
@@ -71,21 +71,21 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                     <div class="mb-3 col-sm-6">
 
 
-                                        <label for="exampleInputEmail1" class="form-label">Title</label>
+                                        <label for="exampleInputEmail1" class="form-label">About Title</label>
                                         <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                     </div>
                                     <div class="mb-3 col-sm-6">
 
 
-                                        <label for="exampleInputEmail1" class="form-label">Image</label>
+                                        <label for="exampleInputEmail1" class="form-label">About Image</label>
                                         <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                     </div>
                                     <div class="mb-3 col-sm-6">
 
 
-                                        <label for="exampleInputEmail1" class="form-label">Link</label>
+                                        <label for="exampleInputEmail1" class="form-label">About Link</label>
                                         <input type="text" name="link" value="<?php echo $link; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                     </div>
@@ -102,7 +102,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                     <div class="mb-3 col-sm-12">
 
 
-                                        <label for="exampleInputEmail1" class="form-label">Description</label>
+                                        <label for="exampleInputEmail1" class="form-label">About Description</label>
                                         <textarea name="msg" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><?php echo $description; ?></textarea>
 
                                     </div>

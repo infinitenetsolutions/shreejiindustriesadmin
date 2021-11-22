@@ -116,11 +116,11 @@ $result2 = mysqli_query($connection, $select1);
           <div class="container">
             <div class="row">
               <div class="md-form col-sm-4">
-                <sub class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">CATEGRIES
-                  NAME</sub>
+                <label class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">CATEGORIES
+                  NAME</label>
                 <select onchange="changeSubCategories(this.value)" name="cat" class="form-control validate"
                   placeholder="Enter Caregorie Name">
-                  <option selected disabled>Choose Categries..</option>
+                  <option selected disabled>Choose Categories..</option>
                   <?php
 
                                     if (mysqli_num_rows($result2) > 0) {
@@ -135,7 +135,7 @@ $result2 = mysqli_query($connection, $select1);
 
               </div>
               <!-- <div class="md-form col-sm-4">
-                                <sub class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</sub>
+                                <label class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</label>
                                 <select id="all_sub_cat" name="cat" class="form-control validate" placeholder="Enter Caregorie Name">
                                     <option selected disabled>Choose Categries..</option>
 
@@ -144,243 +144,244 @@ $result2 = mysqli_query($connection, $select1);
                             </div> -->
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">PRODUCT NAME</sub>
+              
+                <label class="a-color" for="exampleFormControlSelect1">PRODUCT NAME</label>
                 <input name="name" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Name">
+                  placeholder="Enter Product Name">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">PRODUCT CODE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">PRODUCT CODE</label>
                 <input name="p_code" type="text" class="form-control" id="exampleFormControlSelect1"
                   placeholder="Enter Product code">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">MODEL NO</sub>
+                <label class="a-color" for="exampleFormControlSelect1">MODEL NO</label>
                 <input name="p_model_no" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Model no">
+                  placeholder="Enter Product Model no">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">MAKE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">BRAND</label>
                 <input name="make" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Electric Motor">
+                  placeholder="Enter Product Brand">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">GRADE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">GRADE</label>
                 <input name="grade" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter Number of product color ">
+                  placeholder="Enter Product Grade ">
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">MATERIAL TYPE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">MATERIAL TYPE</label>
                 <input name="materialtype" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter number of product ">
+                  placeholder="Enter Product Material Type">
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">SIZE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">SIZE</label>
                 <input name="size" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Size">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">CONVEYOR WIDTH</sub>
+                <label class="a-color" for="exampleFormControlSelect1">CONVEYOR WIDTH</label>
                 <input name="con_width" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Conveyor Width">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">Thickness</sub>
+                <label class="a-color" for="exampleFormControlSelect1">Thickness</label>
                 <input name="thickness" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Thickness">
+                  placeholder="Enter Product Thickness">
               </div>
 
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">CYLINDER SIZE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">CYLINDER SIZE</label>
                 <input name="cylinder_size" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Cylinder Size">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">PRESSURE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">PRESSURE</label>
                 <input name="pressure" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Pressure">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">HEATING AREA</sub>
+                <label class="a-color" for="exampleFormControlSelect1">HEATING AREA</label>
                 <input name="heating" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Heating Area">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">PACKING TYPE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">PACKING TYPE</label>
                 <input name="pack_type" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Packing Size">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">PACKING ACCURACY</sub>
+                <label class="a-color" for="exampleFormControlSelect1">PACKING ACCURACY</label>
                 <input name="pack_accuracy" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Packing Accuracy">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">SEALING TIME</sub>
+                <label class="a-color" for="exampleFormControlSelect1">SEALING TIME</label>
                 <input name="seal_time" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Sealing Time">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">PRODUCTION RATE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">PRODUCTION RATE</label>
                 <input name="production_rete" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Production Rate">
+                  placeholder="Enter Production Rate">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">FOOD CONTACT BODY</sub>
+                <label class="a-color" for="exampleFormControlSelect1">FOOD CONTACT BODY</label>
                 <input name="food_con_body" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Food Contact Body">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">FRAME BODY</sub>
+                <label class="a-color" for="exampleFormControlSelect1">FRAME BODY</label>
                 <input name="frame_body" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Dona Size">
+                  placeholder="Enter Product Frame Body">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">MOTOR</sub>
+                <label class="a-color" for="exampleFormControlSelect1">MOTOR</label>
                 <input name="motor" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Name">
+                  placeholder="Enter Product Motor">
               </div>
 
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">POWER REQUIREMENT</sub>
+                <label class="a-color" for="exampleFormControlSelect1">POWER REQUIREMENT</label>
                 <input name="power_require" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Power Source">
+                  placeholder="Enter Product Power Requirement">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">POWER CONSUMPTION</sub>
+                <label class="a-color" for="exampleFormControlSelect1">POWER CONSUMPTION</label>
                 <input name="power_consumption" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Power Source">
+                  placeholder="Enter Product Power Consumption">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">POWER SUPPLY</sub>
+                <label class="a-color" for="exampleFormControlSelect1">POWER SUPPLY</label>
                 <input name="power_supply" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Power Source">
+                  placeholder="Enter Product Power Supply">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">TEMPERATURE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">TEMPERATURE</label>
                 <input name="temperature" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Power Source">
+                  placeholder="Enter Product Temperature">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">MACHINE SIZE</sub>
+                <label class="a-color" for="exampleFormControlSelect1">MACHINE SIZE</label>
                 <input name="machine_size" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Power Source">
+                  placeholder="Enter Product Machine Size">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">WEIGHT</sub>
+                <label class="a-color" for="exampleFormControlSelect1">WEIGHT</label>
                 <input name="weight" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Weight of Machine">
+                  placeholder="Enter Product Weight">
 
 
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">SPACE REQUIRED </sub>
+                <label class="a-color" for="exampleFormControlSelect1">SPACE REQUIRED </label>
                 <input name="space" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Space ">
+                  placeholder="Enter Product Space Required">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">MAN POWER </sub>
+                <label class="a-color" for="exampleFormControlSelect1">MAN POWER </label>
                 <input name="man_power" type="text" class="form-control" id="exampleFormControlSelect1"
                   placeholder="Enter product Man Power">
 
 
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">WARRANTY</sub>
+                <label class="a-color" for="exampleFormControlSelect1">WARRANTY</label>
                 <input name="p_item_warranty" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter product Warranty or no">
+                  placeholder="Enter product Warranty">
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">ORIGIN COUNTRY</sub>
+                <label class="a-color" for="exampleFormControlSelect1">ORIGIN COUNTRY</label>
                 <input name="p_origin_country" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter the country of the product ">
+                  placeholder="Enter the Origin Country of the Product ">
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">DESCRIPTION</sub>
+                <label class="a-color" for="exampleFormControlSelect1">DESCRIPTION</label>
                 <textarea name="p_long_desc" type="text" class="form-control" id="exampleFormControlSelect1"
-                  placeholder="Enter Long Description of the product"></textarea>
+                  placeholder="Enter Description of the product"></textarea>
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">Product meta title</sub>
+                <label class="a-color" for="exampleFormControlSelect1">Product meta title</label>
                 <input name="p_mete_title" type="text" class="form-control" id="exampleFormControlSelect1"
                   placeholder="Enter Meta title of the product ">
               </div>
 
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">Extra meta Description </sub>
+                <label class="a-color" for="exampleFormControlSelect1">Extra meta Description </label>
                 <input name="p_meta_desc" type="text" class="form-control" id="exampleFormControlSelect1"
                   placeholder="Enter meta Descrtption of the product">
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1">Enter keyword of the product </sub>
+                <label class="a-color" for="exampleFormControlSelect1">Enter keyword of the product </label>
                 <input name="p_meta_keyword" type="text" class="form-control" id="exampleFormControlSelect1"
                   placeholder="Enter Keyword of the product">
               </div>
               <div class="form-group col-sm-4">
-                <sub class="a-color" for="exampleFormControlSelect1"> Upload BROCHURE <span style="color: red;">(only
-                    PDF )</span> </sub>
+                <label class="a-color" for="exampleFormControlSelect1"> Upload Brochure <span style="color: red;">(only
+                    PDF )</span> </label>
                 <input name="BROCHURE" type="file" class="form-control" id="exampleFormControlSelect1"
                   placeholder="upload BROCHURE">
               </div>
 
               <div class="form-group">
-                <sub class="a-color" for="exampleFormControlSelect1">Select Status</sub>
+                <label class="a-color" for="exampleFormControlSelect1">Select Status</label>
                 <select name="status" class="form-control" id="exampleFormControlSelect1">
 
                   <option value='1'>Active</option>

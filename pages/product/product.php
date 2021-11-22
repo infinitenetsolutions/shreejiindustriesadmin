@@ -30,12 +30,12 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Categries</h1>
+              <h1>Products</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Categries</li>
+                <li class="breadcrumb-item active">Products</li>
               </ol>
             </div>
           </div>
@@ -52,7 +52,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">All Categries of The Product</h3>
+                  <h3 class="card-title">All Products</h3>
                 </div>
                 <!-- /.card-header -->
                 <?php

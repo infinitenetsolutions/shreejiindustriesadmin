@@ -61,7 +61,7 @@ if (isset($_POST['add'])) {
 
                             </div>
                             <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">Answare</label>
+                                <label data-error="wrong" data-success="right" for="defaultForm-email">Answer</label>
                                 <input name="ans" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Answare Name">
 
                             </div>

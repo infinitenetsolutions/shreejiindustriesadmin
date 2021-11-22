@@ -67,7 +67,7 @@ $result2 = mysqli_query($connection, $select1);
         <div class="modal-content">
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Categories</h4>
+                    <h4 class="modal-title w-100 font-weight-bold">Add Client</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -78,19 +78,19 @@ $result2 = mysqli_query($connection, $select1);
 
 
                             <div class="form-group col-sm-4 ">
-                                <sub class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">Categories Name</sub>
-                                <input name="cat" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Caregorie Name">
+                                <label class="a-color" data-error="wrong" data-success="right" for="defaultForm-email">Client Name</label>
+                                <input name="cat" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Client Name">
 
 
                             </div>
                             <div class="form-group col-sm-4">
-                                <sub class="a-color" for="exampleFormControlSelect1">Select Status</sub>
+                                <label class="a-color" for="exampleFormControlSelect1">Client Image</label>
                                 <input name="userImage" type="file" class="form-control" id="exampleFormControlSelect1">
 
 
                             </div>
                             <div class="form-group col-sm-4">
-                                <sub class="a-color" for="exampleFormControlSelect1">Select Status</sub>
+                                <label class="a-color" for="exampleFormControlSelect1">Client Status</label>
                                 <select name="status" class="form-control" id="exampleFormControlSelect1">
 
                                     <option value='1'>Active</option>
