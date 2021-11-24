@@ -230,7 +230,7 @@ if(!empty($_FILES['BROCHURE']['tmp_name'])){
                 </div>
                 <div class="form-group col-sm-4">
                   <label class="a-color" for="exampleFormControlSelect1">MODEL NO</label>
-                  <input value="<?php echo $p_model_no ?>" name="p_model_no" type="text" class="form-control"
+                  <input value="<?php echo $model_no ?>" name="p_model_no"  class="form-control"
                     id="exampleFormControlSelect1" placeholder="Enter Product Model no">
 
 
@@ -425,7 +425,7 @@ if(!empty($_FILES['BROCHURE']['tmp_name'])){
                   <label class="a-color" for="exampleFormControlSelect1">DESCRIPTION</label>
                   <textarea name="p_long_desc" type="text" class="form-control" id="exampleFormControlSelect1"
                     placeholder="Enter Product Description">
-                    <?php echo $p_long_desc ?>
+                    <?php echo $product_description ?>
                   </textarea>
                 </div>
                 <div class="form-group col-sm-4">

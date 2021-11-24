@@ -79,10 +79,10 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>Material Type</th>
                           <th>Size</th>
                           <th>Product width</th>
-                          <th>Product Thickness	</th>
+                          <th>Product Thickness </th>
                           <th>Cylinder Size</th>
                           <th>Heating</th>
-                          <th>Pack Type	</th>
+                          <th>Pack Type </th>
                           <th>Pack Accuracy</th>
                           <th>Details</th>
                           <th>Status</th>
@@ -105,7 +105,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                               <td><?php echo $rows['p_code']; ?></td>
                               <td><?php echo $rows['model_no']; ?></td>
                               <td><?php echo $rows['make']; ?></td>
-                     
+
                               <td><?php echo $rows['grade']; ?></td>
                               <td><?php echo $rows['materialtype']; ?></td>
                               <td><?php echo $rows['size']; ?></td>
@@ -119,7 +119,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                               <td><?php echo $rows['pack_type']; ?></td>
                               <td> <a href="details.php?read=<?php echo $rows['p_id']; ?>" class="text-success">More..</a>
 
-                             <td> <?php
+                              <td> <?php
                                     if ($rows['p_status'] == 1) {
                                       echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['p_id'] . "'>Active</a>";
                                     } else {
@@ -128,7 +128,11 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                                     ?>
                               </td>
-                              <td><a href="update.php?edit=<?php echo $rows['p_id']; ?>" class="btn btn-warning">Update</a></td>
+                              <td><a href="update.php?edit=<?php echo $rows['p_id']; ?>" class="btn btn-warning">Product</a>
+                              <br>
+<br>
+                                <a href="booking.php?edit=<?php echo $rows['p_id']; ?>" class="btn btn-primary">Booking</a>
+                              </td>
 
                               <td> <a href="delete.php?delete=<?php echo $rows['p_id']; ?>" class="btn btn-danger">Delete</a> </td>
                             </tr>
@@ -138,7 +142,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       </tbody>
                       <tfoot>
                         <tr>
-                        <th>S.No</th>
+                          <th>S.No</th>
                           <th>Name</th>
                           <th>Code</th>
                           <th>Model No</th>
@@ -147,10 +151,10 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>Material Type</th>
                           <th>Size</th>
                           <th>Product width</th>
-                          <th>Product Thickness	</th>
+                          <th>Product Thickness </th>
                           <th>Cylinder Size</th>
                           <th>Heating</th>
-                          <th>Pack Type	</th>
+                          <th>Pack Type </th>
                           <th>Pack Accuracy</th>
                           <th>Details</th>
                           <th>Status</th>
