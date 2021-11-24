@@ -63,31 +63,31 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                 ?>
 
                 <div class="card-body">
-                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
+                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new product
                   </a>
                   <div class="table-responsive ">
                     <table id="example1" class="table table-bordered table-striped">
 
                       <thead>
                         <tr>
-                          <th>S.NO</th>
+                          <th>S.No</th>
                           <th>Name</th>
-                          <th>code</th>
-                          <th>model_no</th>
-                          <th>make</th>
-                          <th>grade</th>
-                          <th>materialtype</th>
-                          <th>size</th>
-                          <th>con_width</th>
-                          <th>thickness	</th>
-                          <th>cylinder_size</th>
-                          <th>heating</th>
-                          <th>pack_type	</th>
-                          <th>pack_accuracy</th>
-                          <th>details</th>
+                          <th>Code</th>
+                          <th>Model No</th>
+                          <th>Brand</th>
+                          <th>Grade</th>
+                          <th>Material Type</th>
+                          <th>Size</th>
+                          <th>Product width</th>
+                          <th>Product Thickness	</th>
+                          <th>Cylinder Size</th>
+                          <th>Heating</th>
+                          <th>Pack Type	</th>
+                          <th>Pack Accuracy</th>
+                          <th>Details</th>
                           <th>Status</th>
-                          <th>Action</th>
-                          <th>Action</th>
+                          <th>Update</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
 
@@ -138,24 +138,24 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       </tbody>
                       <tfoot>
                         <tr>
-                        <th>S.NO</th>
+                        <th>S.No</th>
                           <th>Name</th>
-                          <th>code</th>
-                          <th>model_no</th>
-                          <th>make</th>
-                          <th>grade</th>
-                          <th>materialtype</th>
-                          <th>size</th>
-                          <th>con_width</th>
-                          <th>thickness	</th>
-                          <th>cylinder_size</th>
-                          <th>heating</th>
-                          <th>pack_type	</th>
-                          <th>pack_accuracy</th>
-                          <th>details</th>
+                          <th>Code</th>
+                          <th>Model No</th>
+                          <th>Brand</th>
+                          <th>Grade</th>
+                          <th>Material Type</th>
+                          <th>Size</th>
+                          <th>Product width</th>
+                          <th>Product Thickness	</th>
+                          <th>Cylinder Size</th>
+                          <th>Heating</th>
+                          <th>Pack Type	</th>
+                          <th>Pack Accuracy</th>
+                          <th>Details</th>
                           <th>Status</th>
-                          <th>Action</th>
-                          <th>Action</th>
+                          <th>Update</th>
+                          <th>Delete</th>
                         </tr>
                       </tfoot>
                     </table>

@@ -92,11 +92,11 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Cat Name</th>
+                          <!-- <th>Cat Name</th> -->
                           <th>IMG type</th>
                           <th>Images</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
+                          <th>Update</th>
+                          <th>Delete</th>
                           <th>Status</th>
                         </tr>
                       </thead>
@@ -115,7 +115,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         ?>
                             <tr>
                               <td><?php echo $rowimage['ci_id']; ?></td>
-                              <td><?php echo $catrow['c_name']; ?></td>
+                              <!-- <td><?php// echo $catrow['c_name']; ?></td> -->
                               <td><?php echo $rowimage['ci_name']; ?></td>
                               <td> 
                               <a <?php echo ' href="data:image/jpeg;base64,' . base64_encode($rowimage['ci_images']) . '"' ?> data-toggle="lightbox" data-title="Slider Images">
@@ -142,7 +142,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       <tfoot>
                       <tr>
                           <th>ID</th>
-                          <th>Cat Name</th>
+                          <!-- <th>Cat Name</th> -->
                           <th>IMG type</th>
                           <th>Images</th>
                           <th>Action1</th>

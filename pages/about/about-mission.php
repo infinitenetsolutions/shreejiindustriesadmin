@@ -100,14 +100,14 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>ID</th>
                           <th>Title</th>
                           <th>Section</th>
-                          <th>link</th>
-                          <th>image</th>
+                          <th>Link</th>
+                          <th>Image</th>
                          
-                          <th>date</th>
-                          <th>Deatails</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
-                          <!-- <th>Action3</th> -->
+                          <th>Date</th>
+                          <th>Details</th>
+                          <th>Update</th>
+                          <th>Delete</th>
+                          
                         </tr>
                       </thead>
 
@@ -148,15 +148,15 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         <tr>
                         <tr>
                         <th>ID</th>
-                          <th>Name</th>
-                          <th>Address</th>
-                          <th>post</th>
-                          <th>image</th>
-                          <th>date</th>
-                          <th>Deatails</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
-                          <!-- <th>Action3</th> -->
+                          <th>Title</th>
+                          <th>Section</th>
+                          <th>Link</th>
+                          <th>Image</th>
+                         
+                          <th>Date</th>
+                          <th>Details</th>
+                          <th>Update</th>
+                          <th>Delete</th>
                         </tr>
                         </tr>
                       </tfoot>

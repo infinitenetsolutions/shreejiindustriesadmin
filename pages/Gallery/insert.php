@@ -6,7 +6,7 @@ include '../../AdminLogin/function.inc.php';
 
 
 if (isset($_POST['add'])) {
-    $cat = simplename($_POST['cat']);
+ // $cat = simplename($_POST['cat']);
     $status = $_POST['status'];
     if ($cat != null) {
 

@@ -77,7 +77,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">All Categories of The Product</h3>
+                  <h3 class="card-title">All Categories</h3>
                 </div>
                 <!-- /.card-header -->
                 <?php
@@ -87,18 +87,18 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                 ?>
 
                 <div class="card-body">
-                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new item
+                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add New Category
                   </a>
                   <div class="table-responsive ">
                     <table id="example1" class="table table-bordered table-striped">
 
                       <thead>
                         <tr>
-                          <th>S.NO</th>
+                          <th>S.No</th>
                           <th>Name</th>
                           <th>Images</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
+                          <th>Update</th>
+                          <th>Delete</th>
                           <th>Status</th>
                         </tr>
                       </thead>
@@ -137,11 +137,11 @@ $i=1;
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th>S.NO</th>
+                        <th>S.No</th>
                           <th>Name</th>
                           <th>Images</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
+                          <th>Update</th>
+                          <th>Delete</th>
                           <th>Status</th>
                         </tr>
                       </tfoot>

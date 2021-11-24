@@ -148,11 +148,11 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       <tfoot>
                         <tr>
                         <tr>
-                          <th>ID</th>
+                        <th>ID</th>
                           <th>Name</th>
                           <th>Email</th>
                           <th>Mobile</th>
-                          <th>Date</th>
+                          <th>Date/Time</th>
                           <th>Query</th>
                           <th>Action1</th>
                         </tr>

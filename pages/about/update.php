@@ -71,21 +71,21 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                                     <div class="mb-3 col-sm-6">
 
 
-                                        <label for="exampleInputEmail1" class="form-label">About Title</label>
+                                        <label for="exampleInputEmail1" class="form-label"> Title</label>
                                         <input type="text" name="name" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                     </div>
                                     <div class="mb-3 col-sm-6">
 
 
-                                        <label for="exampleInputEmail1" class="form-label">About Image</label>
+                                        <label for="exampleInputEmail1" class="form-label"> Image</label>
                                         <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                     </div>
                                     <div class="mb-3 col-sm-6">
 
 
-                                        <label for="exampleInputEmail1" class="form-label">About Link</label>
+                                        <label for="exampleInputEmail1" class="form-label"> Link</label>
                                         <input type="text" name="link" value="<?php echo $link; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                     </div>

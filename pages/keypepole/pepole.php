@@ -63,7 +63,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
               </div>
             </div>
           </div><!-- /.container-fluid -->
-          <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new Pepole
+          <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add New Member
                   </a>
         </section>
 
@@ -95,14 +95,14 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>S.NO</th>
                           <th>Name</th>
                           <th>Address</th>
-                          <th>post</th>
-                          <th>image</th>
-                          <th>priority</th>
-                          <th>date</th>
-                          <th>Deatails</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
-                          <th>Action3</th>
+                          <th>Post</th>
+                          <th>Image</th>
+                          <th>Priority</th>
+                          <th>Date</th>
+                          <th>Details</th>
+                          <th>Update</th>
+                          <th>Delete</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
 

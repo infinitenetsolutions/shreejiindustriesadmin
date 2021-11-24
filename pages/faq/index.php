@@ -55,7 +55,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Categries</h1>
+              <h1>Faq</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -87,7 +87,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                 ?>
 
                 <div class="card-body">
-                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new Faq
+                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add New Faq
                   </a>
                   <div class="table-responsive ">
                     <table id="example1" class="table table-bordered table-striped">
@@ -97,8 +97,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>S.NO</th>
                           <th>Question</th>
                           <th>Answare</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
+                          <th>Update</th>
+                          <th>Delete</th>
                           <th>Status</th>
                         </tr>
                       </thead>
@@ -141,11 +141,11 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       </tbody>
                       <tfoot>
                       <tr>
-                          <th>S.NO</th>
+                      <th>S.NO</th>
                           <th>Question</th>
                           <th>Answare</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
+                          <th>Update</th>
+                          <th>Delete</th>
                           <th>Status</th>
                         </tr>
                       </tfoot>

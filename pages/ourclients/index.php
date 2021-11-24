@@ -91,13 +91,13 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                         <thead>
                           <tr>
-                            <th>S no</th>
+                            <th>S No</th>
                             <th>Clints name</th>
                             <th>Images</th>
                             <!-- <th>Description</th> -->
-                            <th>Action1</th>
-                            <th>Action2</th>
-                            <th>Action3</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                            <th>Status</th>
                           </tr>
                         </thead>
 
@@ -141,13 +141,13 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                         </tbody>
                         <tfoot>
                           <tr>
-                          <th>S no</th>
+                          <th>S No</th>
                             <th>Clints name</th>
                             <th>Images</th>
                             <!-- <th>Description</th> -->
-                            <th>Action1</th>
-                            <th>Action2</th>
-                            <th>Action3</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                            <th>Status</th>
                           </tr>
                         </tfoot>
                       </table>

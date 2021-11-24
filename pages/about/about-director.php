@@ -97,15 +97,15 @@ $_SESSION['url']=$_SERVER['HTTP_REFERER'];
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Title</th>
-                          <th>Section</th>
+                          <th>Name</th>
+                          <th>Designation</th>
                           <th>link</th>
                           <th>image</th>
                          
-                          <th>date</th>
-                          <th>Deatails</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
+                          <th>Date</th>
+                          <th>Details</th>
+                          <th>Update</th>
+                          <th>Status</th>
                           <!-- <th>Action3</th> -->
                         </tr>
                       </thead>
@@ -148,14 +148,14 @@ $_SESSION['url']=$_SERVER['HTTP_REFERER'];
                         <tr>
                         <th>ID</th>
                           <th>Name</th>
-                          <th>Address</th>
-                          <th>post</th>
+                          <th>Designation</th>
+                          <th>link</th>
                           <th>image</th>
-                          <th>date</th>
-                          <th>Deatails</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
-                          <!-- <th>Action3</th> -->
+                         
+                          <th>Date</th>
+                          <th>Details</th>
+                          <th>Update</th>
+                          <th>Status</th>
                         </tr>
                         </tr>
                       </tfoot>

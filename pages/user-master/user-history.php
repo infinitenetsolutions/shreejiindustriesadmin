@@ -92,7 +92,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>No of Item</th>
                           <th>Amount</th>
                           <th>Name</th>
-                          <th>Phone NO</th>
+                          <th>Phone No</th>
                           <th>City</th>
                           <th>State</th>
                           <th>Pincode</th>
@@ -127,11 +127,12 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       </tbody>
                       <tfoot>
                         <tr>
+                        <th>ID</th>
                           <th>P_Name</th>
                           <th>No of Item</th>
                           <th>Amount</th>
                           <th>Name</th>
-                          <th>Phone NO</th>
+                          <th>Phone No</th>
                           <th>City</th>
                           <th>State</th>
                           <th>Pincode</th>

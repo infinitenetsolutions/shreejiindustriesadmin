@@ -44,7 +44,7 @@ $cat_r = mysqli_query($connection, $categrie);
             <form action="" method="POST" enctype="multipart/form-data">
 
                 <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Categories</h4>
+                    <h4 class="modal-title w-100 font-weight-bold">Add Member</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -55,34 +55,34 @@ $cat_r = mysqli_query($connection, $categrie);
 
 
                             <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">Name</label>
-                                <input name="name" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Caregorie Name">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email">Member Name</label>
+                                <input name="name" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Member Name">
 
                             </div>
 
 
                             <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">email</label>
-                                <input name="email" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Email id">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email">Member Email</label>
+                                <input name="email" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Member Email id">
 
                             </div>
                             <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">phone</label>
-                                <input name="phone" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Phone number">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email">Member Phone Number</label>
+                                <input name="phone" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Member Number">
 
                             </div>
                             <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">address</label>
-                                <input name="address" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Address Name">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email">Address</label>
+                                <input name="address" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Member Address">
 
                             </div>
                             <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email"> post </label>
+                                <label data-error="wrong" data-success="right" for="defaultForm-email"> Member Post </label>
                                 <input name="post" type="text" id="defaultForm-email" class="form-control validate" placeholder="Enter Post">
 
                             </div>
                             <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">image</label>
+                                <label data-error="wrong" data-success="right" for="defaultForm-email">Member Image</label>
                                 <input name="image" type="file" id="defaultForm-email" accept="image/*" class="form-control validate" placeholder="Enter Caregorie Name">
 
                             </div>
@@ -107,7 +107,7 @@ $cat_r = mysqli_query($connection, $categrie);
                                 </select>
                             </div>
                             <div class="md-form col-sm-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">Description</label>
+                                <label data-error="wrong" data-success="right" for="defaultForm-email">Member Description</label>
                                 <textarea name="description" id="defaultForm-email" class="form-control validate">
 
 
@@ -120,7 +120,7 @@ $cat_r = mysqli_query($connection, $categrie);
                     <?php echo $msg; ?>
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button name="add" class="btn btn-default">Add Pepole</button>
+                    <button name="add" class="btn btn-default">Add Member</button>
                 </div>
             </form>
         </div>
