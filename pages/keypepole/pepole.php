@@ -64,7 +64,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
             </div>
           </div><!-- /.container-fluid -->
           <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add New Member
-                  </a>
+          </a>
         </section>
 
         <!-- Main content -->
@@ -85,78 +85,80 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                   include 'insert.php';
                   // include 'update.php';
                   ?>
-                
+
                   <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="example1" class="table table-bordered table-striped">
 
-                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>S.NO</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Post</th>
+                            <th>Image</th>
+                            <th>Priority</th>
+                            <th>Date</th>
+                            <th>Details</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
 
-                      <thead>
-                        <tr>
-                          <th>S.NO</th>
-                          <th>Name</th>
-                          <th>Address</th>
-                          <th>Post</th>
-                          <th>Image</th>
-                          <th>Priority</th>
-                          <th>Date</th>
-                          <th>Details</th>
-                          <th>Update</th>
-                          <th>Delete</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
+                        <tbody>
 
-                      <tbody>
+                          <?php
+                          $i = 1;
+                          if (mysqli_num_rows($result1) > 0) {
+                            while ($rows = mysqli_fetch_array($result1)) {
 
-                        <?php
-$i=1;
-                        if (mysqli_num_rows($result1) > 0) {
-                          while ($rows = mysqli_fetch_array($result1)) {
+                          ?>
+                              <tr>
+                                <td><?php echo $i; ?></td>
+                                <td><?php echo $rows['name']; ?></td>
+                                <td><?php echo $rows['address']; ?></td>
+                                <td><?php echo $rows['post']; ?></td>
+                                <td><?php echo '<img class="mini" src="data:image/jpeg;base64,' . base64_encode($rows['image']) . '"/>'; ?></td>
+                                <td><?php echo $rows['priority']; ?></td>
+                                <td><?php echo $rows['date']; ?></td>
+                                <td> <a href="read-mail.php?read=<?php echo $rows['id']; ?>">more</a> </td>
+                                <td><a href="update.php?edit=<?php echo $rows['id']; ?>" class="btn btn-warning">Update</a></td>
+                                <td> <a href="delete.php?delete=<?php echo $rows['id']; ?>" class="btn btn-danger">Delete</a>
+                                <td> <?php
+                                      if ($rows['status'] == 1) {
+                                        echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['id'] . "'>Active</a>";
+                                      } else {
+                                        echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['id'] . "'>Deactive</a>";
+                                      }
 
-                        ?>
-                            <tr>
-                              <td><?php echo $i; ?></td>
-                              <td><?php echo $rows['name']; ?></td>
-                              <td><?php echo $rows['address']; ?></td>
-                              <td><?php echo $rows['post']; ?></td>
-                              <td><?php echo '<img class="mini" src="data:image/jpeg;base64,' . base64_encode($rows['image']) . '"/>'; ?></td>
-                              <td><?php echo $rows['priority']; ?></td>
-                              <td><?php echo $rows['date']; ?></td>
-                              <td> <a href="read-mail.php?read=<?php echo $rows['id']; ?>">more</a> </td>
-                              <td><a href="update.php?edit=<?php echo $rows['id']; ?>" class="btn btn-warning">Update</a></td>
-                              <td> <a href="delete.php?delete=<?php echo $rows['id']; ?>" class="btn btn-danger">Delete</a>
-                              <td> <?php
-                                    if ($rows['status'] == 1) {
-                                      echo "<a class='btn btn-success' href='activedeactive.php?type=status&operation=deactive&id=" . $rows['id'] . "'>Active</a>";
-                                    } else {
-                                      echo "<a class='btn btn-secondary' href='activedeactive.php?type=status&operation=active&id=" . $rows['id'] . "'>Deactive</a>";
-                                    }
+                                      ?>
+                                </td>
 
-                                    ?>
-                              </td>
-
-                            </tr>
-                        <?php $i++; }
-                        } ?>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                        <tr>
-                        <th>ID</th>
-                          <th>Name</th>
-                          <th>Address</th>
-                          <th>post</th>
-                          <th>image</th>
-                          <th>priority</th>
-                          <th>date</th>
-                          <th>Deatails</th>
-                          <th>Action1</th>
-                          <th>Action2</th>
-                          <th>Action3</th>
-                        </tr>
-                        </tr>
-                      </tfoot>
-                    </table>
+                              </tr>
+                          <?php $i++;
+                            }
+                          } ?>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>post</th>
+                            <th>image</th>
+                            <th>priority</th>
+                            <th>date</th>
+                            <th>Deatails</th>
+                            <th>Action1</th>
+                            <th>Action2</th>
+                            <th>Action3</th>
+                          </tr>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
                   </div>
                   <!-- /.card-body -->
                 </div>
