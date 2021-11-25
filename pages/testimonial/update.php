@@ -10,13 +10,15 @@ include '../../connection.inc.php';
 if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
     $id = $_GET['edit'];
 
-    $select_single_data = "SELECT * FROM `jobtype` WHERE id=$id";
+    $select_single_data = "SELECT * FROM `testimonial` WHERE id=$id";
     $result = mysqli_query($connection, $select_single_data);
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
 
         $name = $row['name'];
         $desc = $row['description'];
+        $post = $row['post'];
+        $image = $row['images'];
         $status = $row['status'];
 
 ?>
@@ -57,16 +59,39 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
             <div class="container">
               <div class="row">
 
-                <div class="mb-3 col-sm-6">
+                <div class="mb-3 col-sm-4">
 
 
-                  <label for="exampleInputEmail1" class="form-label">Categorie Name</label>
+                  <lavel class="a-color" for="exampleFormControlSelect1"> <b> name </b></lavel>
                   <input type="text" name="name" value="<?php echo $name; ?>" class="form-control"
                     id="exampleInputEmail1" aria-describedby="emailHelp">
 
                 </div>
-                <div class="form-group col-sm-6">
-                  <label for="exampleFormControlSelect1">Select Status</label>
+
+                <div class="form-group col-sm-3">
+                  <lavel class="a-color" for="exampleFormControlSelect1"> <b> Designation </b></lavel>
+                  <input value="<?php echo $post; ?>" name="post" type="text" placeholder="Designation"
+                    class="form-control" id="exampleFormControlSelect1">
+                </div>
+
+                <div class="form-group col-sm-3">
+                  <lavel class="a-color" for="exampleFormControlSelect1"> <b> Images</b></lavel>
+
+                  <div class="col-sm-6">
+                    <a <?php echo ' href="data:image/jpeg;base64,' . base64_encode($image) . '"' ?>
+                      data-toggle="lightbox" data-title="Images">
+                      <img height="30px" width="30px"
+                        <?php echo ' src="data:image/jpeg;base64,' . base64_encode($image) . '"' ?>
+                        class="img-fluid mb-2" alt="Slider Images" />
+                    </a>
+                  </div>
+
+                  <div class="col-sm-9">
+                    <input name="img" type="file" class="form-control" id="exampleFormControlSelect1">
+                  </div>
+                </div>
+                <div class="form-group col-sm-2">
+                  <lavel class="a-color" for="exampleFormControlSelect1"> <b> Status </b></lavel>
                   <select name="status" class="form-control" id="exampleFormControlSelect1">
 
                     <option value='1'>Active</option>
@@ -78,7 +103,7 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
                 <div class="mb-3 col-sm-12">
 
 
-                  <label for="exampleInputEmail1" class="form-label">Categorie Name</label>
+                  <label for="exampleInputEmail1" class="form-label">Description</label>
                   <textarea name="desc" class="form-control" id="exampleInputEmail1"
                     aria-describedby="emailHelp"> <?php echo $desc ?> </textarea>
 
@@ -102,18 +127,24 @@ if (isset($_GET['edit']) && ($_GET['edit'] != '')) {
 <?php
 
     } else {
-        header('location: ../../pages/jobtype');
+        header('location: ../../pages/testimonial');
     }
 } else {
-    header('location: ../../pages/jobtype');
+    header('location: ../../pages/testimonial');
 }
 if (isset($_POST['Submit'])) {
     $name = $_POST['name'];
     $desc = $_POST['desc'];
+    $post = $_POST['post'];
     $status = $_POST['status'];
 
+    if (!empty($_FILES['img']['tmp_name'])) {
+      $images = addslashes(file_get_contents($_FILES['img']['tmp_name']));
+      $update_img = "UPDATE `testimonial` SET `images`='$images' WHERE `id`='$id'";
+      $result = mysqli_query($connection, $update_img);
+  }
 
-        $update = "UPDATE `jobtype` SET `name`='$name',`description`='$desc',`status`='$status' WHERE `id`='$id'";
+        $update = "UPDATE `testimonial` SET `name`='$name',`description`='$desc',`status`='$status',`post`='$post'  WHERE `id`='$id'";
         $result = mysqli_query($connection, $update);
         if ($result) {
 

@@ -3,7 +3,7 @@
 if(isset($_GET['delete'])){
     include '../../connection.inc.php';
 $id=$_GET['delete'];
-$delete="delete from jobtype where id=$id";
+$delete="delete from testimonial where id=$id";
 $result=mysqli_query($connection,$delete);
 if($result){
     header('location:index.php');

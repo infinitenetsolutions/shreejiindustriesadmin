@@ -126,7 +126,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                                 <td><?php echo '<img class="mini" src="data:image/jpeg;base64,' . base64_encode($rows['images']) . '"/>'; ?></td>
 
                                 <td><?php echo $rows['date']; ?></td>
-                                <td> <a href="https://shreejiindustries.org/shreeji/mission-vission">more</a> </td>
+                                <td> <a href="https://shreejiindustries.org/shreeji/about-company">more</a> </td>
                                 <td><a href="update.php?edit=<?php echo $rows['id']; ?>" class="btn btn-warning">Update</a></td>
                                 <!-- <td> <a href="delete.php?delete=<?php //echo $rows['id']; 
                                                                       ?>" class="btn btn-danger">Delete</a> -->

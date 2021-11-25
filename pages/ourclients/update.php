@@ -109,7 +109,7 @@ if (isset($_POST['Submit'])) {
     $cat = simplename($_POST['name']);
     $status = simplename($_POST['status']);
     if ($_FILES > 0) {
-     echo   $images = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+        $images = addslashes(file_get_contents($_FILES['image']['tmp_name']));
     }
     if ($status == 1 || $status == 0) {
 

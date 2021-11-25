@@ -117,7 +117,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                               <td><?php echo $rows['heating']; ?></td>
 
                               <td><?php echo $rows['pack_type']; ?></td>
-                              <td> <a href="details.php?read=<?php echo $rows['p_id']; ?>" class="text-success">More..</a>
+                              <td> <a href="https://shreejiindustries.org/shreeji/product?product=<?php echo $rows['p_id']; ?>" class="text-success">More..</a>
 
                               <td> <?php
                                     if ($rows['p_status'] == 1) {
