@@ -35,7 +35,7 @@ $heating = $row['heating'];
 $pack_type   = $row['pack_type'];
 $pack_accuracy = $row['pack_accuracy'];
 $seal_time   = $row['seal_time'];
-$product_selling_price = $row['book_amount'];
+// $product_selling_price = $row['book_amount'];
 $production_rete   = $row['production_rete'];
 $food_con_body = $row['food_con_body'];
 $frame_body = $row['frame_body'];
@@ -113,7 +113,7 @@ if(!empty($_FILES['BROCHURE']['tmp_name'])){
   $update_data = "UPDATE `product` SET  `BROCHURE`='$BROCHURE' WHERE `p_id`='$id' ";
   $result_data = mysqli_query($connection, $update_data);
 }
-       $update_data = "UPDATE `product` SET `p_name`='$product_name',`p_code`='$p_code',`model_no`='$model_no',`make`='$make',`grade`='$grade',`materialtype`='$materialtype',`size`='$size',`con_width`='$con_width',`thickness`='$thickness',`cylinder_size`='$cylinder_size',`pressure`='$pressure',`heating`='$heating',`pack_type`='$pack_type',`pack_accuracy`='$pack_accuracy',`seal_time`='$seal_time',`production_rete`='$production_rete',`food_con_body`='$food_con_body',`frame_body`='$frame_body',`motor`='$motor',`power_require`='$power_require',`power_consumption`='$power_consumption',`power_supply`='$power_supply',`temperature`='$temperature',`machine_size`='$machine_size',`weight`='$weight',`space`='$space',`man_power`='$man_power',`p_item_warranty`='$p_item_warranty',`p_short_desc`='$p_short_desc',`p_long_desc`='$p_long_desc',`p_mete_title`='$p_mete_title',`p_meta_desc`='$p_meta_desc',`p_meta_keyword`='[value-34]',`p_status`='$status',`book_amount`='0',`p_categries_name`='$p_categries_name' WHERE `p_id`='$id' ";
+       $update_data = "UPDATE `product` SET `p_name`='$product_name',`p_code`='$p_code',`model_no`='$model_no',`make`='$make',`grade`='$grade',`materialtype`='$materialtype',`size`='$size',`con_width`='$con_width',`thickness`='$thickness',`cylinder_size`='$cylinder_size',`pressure`='$pressure',`heating`='$heating',`pack_type`='$pack_type',`pack_accuracy`='$pack_accuracy',`seal_time`='$seal_time',`production_rete`='$production_rete',`food_con_body`='$food_con_body',`frame_body`='$frame_body',`motor`='$motor',`power_require`='$power_require',`power_consumption`='$power_consumption',`power_supply`='$power_supply',`temperature`='$temperature',`machine_size`='$machine_size',`weight`='$weight',`space`='$space',`man_power`='$man_power',`p_item_warranty`='$p_item_warranty',`p_short_desc`='$p_short_desc',`p_long_desc`='$p_long_desc',`p_mete_title`='$p_mete_title',`p_meta_desc`='$p_meta_desc',`p_meta_keyword`='[value-34]',`p_status`='$status',`p_categries_name`='$p_categries_name' WHERE `p_id`='$id' ";
      
   
     $result_data = mysqli_query($connection, $update_data);
@@ -354,7 +354,7 @@ if(!empty($_FILES['BROCHURE']['tmp_name'])){
                 <div class="form-group col-sm-4">
                   <label class="a-color" for="exampleFormControlSelect1">POWER REQUIREMENT</label>
                   <input value="<?php echo $p_categries_name ?>" name="power_require" type="text" class="form-control"
-                    id="exampleFormControlSelect1" placeholder="Enter product Power Requirement">
+                    id="exampleFormControlSelect1" maplaceholder="Enter product Power Requirement">
 
 
                 </div>

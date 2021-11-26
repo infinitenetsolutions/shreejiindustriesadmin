@@ -28,7 +28,7 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon far fa-list-alt"></i>
+            <i class="nav-icon fas fa-id-card-alt"> </i>
             <p>
               Enquiry
               <i class="fas fa-angle-left right"></i>
@@ -62,14 +62,7 @@
                 <p>Categories</p>
               </a>
             </li>
-            <!-- <li class="nav-item">
-                            <a href="./pages/subcategries/categories.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>SubCategories
-                                </p>
-                            </a>
-                        </li> -->
-
+        
           </ul>
         </li>
         <li class="nav-item has-treeview">
@@ -95,7 +88,7 @@
 
         <li class="nav-item has-treeview">
           <a href="./pages/user-master/user.php" class="nav-link">
-            <i class="nav-icon fas fa-user"></i>
+            <i class=" nav-icon fas fa-sort-amount-up-alt"></i>
             <p>
               Order
 
@@ -137,7 +130,7 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="./pages/Gallery/home.php" class="nav-link">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-user-alt"></i>
             <p>
               Member
 
@@ -161,11 +154,11 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="../contact/contact.php" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
+            <i class=" nav-icon fas fa-eject"></i>
             <p>
               About us
               <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right">6</span>
+
             </p>
           </a>
           <ul class="nav nav-treeview">
@@ -207,7 +200,7 @@
             <p>
               Job
               <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right">6</span>
+
             </p>
           </a>
 
@@ -226,9 +219,9 @@
           <a href="../contact/contact.php" class="nav-link">
             <i class="nav-icon fas fa-comments"></i>
             <p>
-            Testimonial
+              Testimonial
               <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right">6</span>
+
             </p>
           </a>
 
@@ -244,11 +237,11 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="../contact/contact.php" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
+            <i class="nav-icon fas fa-building"></i>
             <p>
               Shreeji Industries
               <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right">6</span>
+
             </p>
           </a>
           <ul class="nav nav-treeview">

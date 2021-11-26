@@ -63,7 +63,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                 ?>
 
                 <div class="card-body">
-                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new product
+                  <a href="" class="btn btn-primary text-center" data-toggle="modal" data-target="#insert">Add new
+                    product
                   </a>
                   <div class="table-responsive ">
                     <table id="example1" class="table table-bordered table-striped">
@@ -83,7 +84,9 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>Cylinder Size</th>
                           <th>Heating</th>
                           <th>Pack Type </th>
-                          <th>Pack Accuracy</th>
+                          <th>Pressure</th>
+                          <th>Priority</th>
+
                           <th>Details</th>
                           <th>Status</th>
                           <th>Update</th>
@@ -113,10 +116,26 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                               <td><?php echo $rows['thickness']; ?></td>
                               <td><?php echo $rows['cylinder_size']; ?></td>
-                              <td><?php echo $rows['pressure']; ?></td>
                               <td><?php echo $rows['heating']; ?></td>
-
                               <td><?php echo $rows['pack_type']; ?></td>
+
+                              <td><?php echo $rows['pressure']; ?></td>
+                              <td>
+                                <select onchange="prarity(this.value,<?php echo $rows['p_id']; ?>)" class="form-control" name="prarity" id="">
+                                  <?php if ($rows['p_categries_sub_name'] != '') { ?>
+                                    <option selected value="<?php echo $rows['p_categries_sub_name']; ?>">
+                                      <?php echo $rows['p_categries_sub_name']; ?></option>
+                                  <?php } else { ?>
+                                    <option selected disabled>- Select - </option>
+
+                                  <?php } ?>
+                                  <?php for ($i = 1; $i <= 10; $i++) { ?>
+                                    <option value="<?php echo $i ?>"> <?php echo $i ?></option>
+                                  <?php } ?>
+                                </select>
+                              </td>
+
+
                               <td> <a href="https://shreejiindustries.org/shreeji/product?product=<?php echo $rows['p_id']; ?>" class="text-success">More..</a>
 
                               <td> <?php
@@ -129,8 +148,8 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                                     ?>
                               </td>
                               <td><a href="update.php?edit=<?php echo $rows['p_id']; ?>" class="btn btn-warning">Product</a>
-                              <br>
-<br>
+                                <br>
+                                <br>
                                 <a href="booking.php?edit=<?php echo $rows['p_id']; ?>" class="btn btn-primary">Booking</a>
                               </td>
 
@@ -155,7 +174,9 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                           <th>Cylinder Size</th>
                           <th>Heating</th>
                           <th>Pack Type </th>
-                          <th>Pack Accuracy</th>
+                          <th>Pressure</th>
+                          <th>Priority</th>
+
                           <th>Details</th>
                           <th>Status</th>
                           <th>Update</th>
@@ -190,3 +211,18 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 </body>
 
 </html>
+
+<script>
+  function prarity(prarity,id) {
+    if (prarity != '') {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onload = function() {
+
+      }
+      xmlhttp.open('GET', 'prarity.php?data=' + prarity+'&&id='+id)
+      var  data = {id:id,prarity: prarity};
+
+      xmlhttp.send()
+    }
+  }
+</script>
