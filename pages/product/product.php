@@ -97,13 +97,13 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
                       <tbody>
 
                         <?php
-                        $i = 1;
+                        $j = 0;
                         if (mysqli_num_rows($result) > 0) {
                           while ($rows = mysqli_fetch_array($result)) {
-
+                            $j++;
                         ?>
                             <tr>
-                              <td><?php echo $i; ?></td>
+                              <td><?php echo $j; ?></td>
                               <td><?php echo $rows['p_name']; ?></td>
                               <td><?php echo $rows['p_code']; ?></td>
                               <td><?php echo $rows['model_no']; ?></td>
@@ -155,7 +155,7 @@ if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
 
                               <td> <a href="delete.php?delete=<?php echo $rows['p_id']; ?>" class="btn btn-danger">Delete</a> </td>
                             </tr>
-                        <?php $i++;
+                        <?php
                           }
                         } ?>
                       </tbody>
