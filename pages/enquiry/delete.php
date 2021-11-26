@@ -3,10 +3,11 @@
 if(isset($_GET['delete'])){
     include '../../connection.inc.php';
 $id=$_GET['delete'];
-$delete="delete from contact where con_id=$id";
+echo $delete="DELETE FROM `enquiry` WHERE `id`='$id'";
 $result=mysqli_query($connection,$delete);
+
 if($result){
-    header('location:contact.php');
+    header('location:index.php');
 }
 else{
     echo "data not deleted here";
