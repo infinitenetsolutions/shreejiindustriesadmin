@@ -65,6 +65,7 @@ $cat_data=mysqli_fetch_array($result_cat);
 // updating data here
 
 if (isset($_POST['Submit'])) {
+  $p_categries_name=$_POST['cat'];
   $name = $_POST['name'];
   $p_code = $_POST['p_code'];
   $p_model_no = $_POST['p_model_no'];
@@ -113,7 +114,7 @@ if(!empty($_FILES['BROCHURE']['tmp_name'])){
   $update_data = "UPDATE `product` SET  `BROCHURE`='$BROCHURE' WHERE `p_id`='$id' ";
   $result_data = mysqli_query($connection, $update_data);
 }
-       $update_data = "UPDATE `product` SET `p_name`='$product_name',`p_code`='$p_code',`model_no`='$p_model_no',`make`='$make',`grade`='$grade',`materialtype`='$materialtype',`size`='$size',`con_width`='$con_width',`thickness`='$thickness',`cylinder_size`='$cylinder_size',`pressure`='$pressure',`heating`='$heating',`pack_type`='$pack_type',`pack_accuracy`='$pack_accuracy',`seal_time`='$seal_time',`production_rete`='$production_rete',`food_con_body`='$food_con_body',`frame_body`='$frame_body',`motor`='$motor',`power_require`='$power_require',`power_consumption`='$power_consumption',`power_supply`='$power_supply',`temperature`='$temperature',`machine_size`='$machine_size',`weight`='$weight',`space`='$space',`man_power`='$man_power',`p_item_warranty`='$p_item_warranty',`p_short_desc`='$p_short_desc',`p_long_desc`='$p_long_desc',`p_mete_title`='$p_mete_title',`p_meta_desc`='$p_meta_desc',`p_meta_keyword`='$p_meta_keyword',`p_status`='$status',`p_categries_name`='$p_categries_name' WHERE `p_id`='$id' ";
+       $update_data = "UPDATE `product` SET `p_name`='$name',`p_code`='$p_code',`model_no`='$p_model_no',`make`='$make',`grade`='$grade',`materialtype`='$materialtype',`size`='$size',`con_width`='$con_width',`thickness`='$thickness',`cylinder_size`='$cylinder_size',`pressure`='$pressure',`heating`='$heating',`pack_type`='$pack_type',`pack_accuracy`='$pack_accuracy',`seal_time`='$seal_time',`production_rete`='$production_rete',`food_con_body`='$food_con_body',`frame_body`='$frame_body',`motor`='$motor',`power_require`='$power_require',`power_consumption`='$power_consumption',`power_supply`='$power_supply',`temperature`='$temperature',`machine_size`='$machine_size',`weight`='$weight',`space`='$space',`man_power`='$man_power',`p_item_warranty`='$p_item_warranty',`p_short_desc`='$p_short_desc',`p_long_desc`='$p_long_desc',`p_mete_title`='$p_mete_title',`p_meta_desc`='$p_meta_desc',`p_meta_keyword`='$p_meta_keyword',`p_status`='$status',`p_categries_name`='$p_categries_name' WHERE `p_id`='$id' ";
      
   
     $result_data = mysqli_query($connection, $update_data);
