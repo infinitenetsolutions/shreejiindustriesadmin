@@ -1,52 +1,51 @@
 <?php
-$msg='';
+$msg = '';
 include '../../connection.inc.php';
 
 if (isset($_SESSION['username']) && ($_SESSION['username'] != '')) {
-    $select = "SELECT * FROM `product`";
-    $result = mysqli_query($connection, $select);
+  $select = "SELECT * FROM `product`";
+  $result = mysqli_query($connection, $select);
 } else {
-    header('location:./AdminLogin/super_Admin.php');
+  header('location:./AdminLogin/super_Admin.php');
 }
-$product_id=$_GET['pro'];
+$product_id = $_GET['pro'];
 
 
 
 if (isset($_POST['submit'])) {
-  
-    $num_img = count($_FILES['img']['name']);
-    $delete_img=mysqli_query($connection,"DELETE FROM `product_images` WHERE `product_img_id`='$product_id'");
-   
-    for ($i = 0; $i < $num_img; $i++) {
-        $img_name = $_FILES['img']['name'][$i];
-        $images = addslashes(file_get_contents($_FILES['img']['tmp_name'][$i]));
-        $img_qury = "INSERT INTO `product_images`(`name`, `images`, `product_img_id`) VALUES ('$img_name','$images','$product_id')";
-        $result = mysqli_query($connection, $img_qury);
 
-    }
-    if ($result) {
-        $msg= '<div class="alert alert-success alert-dismissible fade show" role="alert">
+  $num_img = count($_FILES['img']['name']);
+  $delete_img = mysqli_query($connection, "DELETE FROM `product_images` WHERE `product_img_id`='$product_id'");
+
+  for ($i = 0; $i < $num_img; $i++) {
+    $img_name = $_FILES['img']['name'][$i];
+    $images = addslashes(file_get_contents($_FILES['img']['tmp_name'][$i]));
+    $img_qury = "INSERT INTO `product_images`(`name`, `images`, `product_img_id`) VALUES ('$img_name','$images','$product_id')";
+    $result = mysqli_query($connection, $img_qury);
+  }
+  if ($result) {
+    $msg = '<div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Success</strong> Your Data Successfully Added into the Database
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>';
 
-        echo "<script>
+    echo "<script>
         setTimeout(function() {
             window.location.replace('product.php');
 
           }, 1000);
 
     </script>";
-    } else {
-        $msg= '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  } else {
+    $msg = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>Alert!</strong>  ' . $connection->error . '
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>';
-    }
+  }
 }
 
 ?>
@@ -79,9 +78,9 @@ if (isset($_POST['submit'])) {
   <div class="wrapper">
     <!-- Navbar -->
     <?php
-        include '../navfootersider/nav.php';
-        include '../navfootersider/aside.php';
-        ?>
+    include '../navfootersider/nav.php';
+    include '../navfootersider/aside.php';
+    ?>
     <!-- end navbar -->
     <!-- Main Sidebar Container -->
 
@@ -124,9 +123,9 @@ if (isset($_POST['submit'])) {
                 <!-- /.card-header -->
                 <?php
 
-                                include 'insert.php';
+                include 'insert.php';
 
-                                ?>
+                ?>
                 <br>
                 <form action="" method="POST" enctype="multipart/form-data">
                   <div class="container">
@@ -134,8 +133,7 @@ if (isset($_POST['submit'])) {
                       <div class="col-sm-2 imgUp">
                         <div class="imagePreview"></div>
                         <label class="btn btn-primary">
-                          Upload<input type="file" name="img[]" class="uploadFile img" value="Upload Photo"
-                            style="width: 0px;height: 0px;overflow: hidden;">
+                          Upload<input type="file" name="img[]" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
                         </label>
                       </div><!-- col-2 -->
                       <i class="fa fa-plus imgAdd"></i>
@@ -184,7 +182,7 @@ if (isset($_POST['submit'])) {
   <script src="../../dist/js/demo.js"></script>
   <!-- page script -->
   <script>
-    $(function () {
+    $(function() {
       $("#example1").DataTable();
       $('#example2').DataTable({
         "paging": true,
@@ -195,22 +193,21 @@ if (isset($_POST['submit'])) {
         "autoWidth": false,
       });
     });
-
   </script>
   <script>
-    $(".imgAdd").click(function () {
+    $(".imgAdd").click(function() {
       $(this).closest(".row").find('.imgAdd').before(
         '<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" name="img[]" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
-        );
+      );
     });
-    $(document).on("click", "i.del", function () {
+    $(document).on("click", "i.del", function() {
       // 	to remove card
       $(this).parent().remove();
       // to clear image
       // $(this).parent().find('.imagePreview').css("background-image","url('')");
     });
-    $(function () {
-      $(document).on("change", ".uploadFile", function () {
+    $(function() {
+      $(document).on("change", ".uploadFile", function() {
         var uploadFile = $(this);
         var files = !!this.files ? this.files : [];
         if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
@@ -219,7 +216,7 @@ if (isset($_POST['submit'])) {
           var reader = new FileReader(); // instance of the FileReader
           reader.readAsDataURL(files[0]); // read the local file
 
-          reader.onloadend = function () { // set image data as background of div
+          reader.onloadend = function() { // set image data as background of div
             //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
             uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result +
               ")");
@@ -228,7 +225,6 @@ if (isset($_POST['submit'])) {
 
       });
     });
-
   </script>
 </body>
 

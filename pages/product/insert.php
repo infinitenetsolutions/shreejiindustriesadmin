@@ -44,7 +44,7 @@ if (isset($_POST['add'])) {
   $p_item_warranty = $_POST['p_item_warranty'];
   $p_origin_country = $_POST['p_origin_country'];
   // $p_shop_fee = $_POST['p_shop_fee'];
-  $p_short_desc = 'not give';
+  $p_short_desc = $_POST['p_short_desc'];
   $p_long_desc = $_POST['p_long_desc'];
 
   $p_mete_title = $_POST['p_mete_title'];
@@ -161,6 +161,12 @@ $result2 = mysqli_query($connection, $select1);
 
 
               </div>
+              <div class="form-group col-sm-4">
+                <label class="a-color" for="exampleFormControlSelect1">PRODUCT BOOKING AMOUNT (IN <i class="fas fa-rupee-sign    "></i> )</label>
+                <input value="" name="p_short_desc" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Product Booking amount">
+              </div>
+
+
               <div class="form-group col-sm-4">
                 <label class="a-color" for="exampleFormControlSelect1">MODEL NO</label>
                 <input name="p_model_no" type="text" class="form-control" id="exampleFormControlSelect1" placeholder="Enter Product Model no">
@@ -347,7 +353,7 @@ $result2 = mysqli_query($connection, $select1);
               <div class="form-group col-sm-4">
                 <label class="a-color" for="exampleFormControlSelect1"> Upload Brochure <span style="color: red;">(only
                     PDF )</span> </label>
-                <input name="BROCHURE" type="file" class="form-control" id="exampleFormControlSelect1" placeholder="upload BROCHURE">
+                <input name="BROCHURE" accept="application/pdf" type="file" class="form-control" id="exampleFormControlSelect1" placeholder="upload BROCHURE">
               </div>
 
               <div class="form-group">
